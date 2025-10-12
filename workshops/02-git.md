@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:24](/assests/sharif-logo-blue.png) **Sharif University Workshop Series — Git Fundamentals**"
+header: "![height:24](/assets/sharif-logo-blue.png) **Sharif University Workshop Series — Git Fundamentals**"
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -17,7 +17,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../assests/sharif-logo-blue.png)
+![bg right:30% 90%](../slides/assets/sharif-logo-blue.png)
 # Advanced Programming
 ## Git Fundamentals
 
@@ -189,7 +189,7 @@ git push origin v1.0.0                       # Push tag to remote
 # End of Presentation
 
 <div class="imgbox">
-  <img src="../assests/slides/git/meme.png" alt="Git Meme" width="260">
+  <img src="../assets/slides/git/meme.png" alt="Git Meme" width="260">
 </div>
 
 *Sharif University Workshop Series — Git Fundamentals*

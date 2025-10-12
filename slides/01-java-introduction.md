@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:25](./assests/sharif-logo-blue.png) **Advanced Programming (AP) — Java Introduction**"
+header: "![height:25](assets/sharif-logo-blue.png) **Advanced Programming (AP) — Java Introduction**"
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -22,7 +22,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../assests/sharif-logo-blue.png)
+![bg right:30% 90%](assets/sharif-logo-blue.png)
 
 # Advanced Programming
 ## Java Introduction
@@ -65,7 +65,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-timeline.png)
+![width:800](assets/01/java-timeline.png)
 
   </div>
 </div>
@@ -87,7 +87,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-jvm-pipeline.png)
+![width:800](assets/01/java-jvm-pipeline.png)
 
   </div>
 </div>
@@ -112,7 +112,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/jvm-architecture.png)
+![width:800](assets/01/jvm-architecture.png)
 
   </div>
 </div>
@@ -232,7 +232,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-platforms-ecosystem.png)
+![width:800](assets/01/java-platforms-ecosystem.png)
 
   </div>
 </div>
@@ -263,7 +263,7 @@ java Hello
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-ide-compile.png)
+![width:800](assets/01/java-ide-compile.png)
 
   </div>
 </div>
@@ -285,7 +285,7 @@ java Hello
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/tiobe-trend-java.png)
+![width:800](assets/01/tiobe-trend-java.png)
 <div style="font-size: 5px;"><a href="https://zerotomastery.io/blog/best-programming-languages-to-learn/">
 Zerotomastery.io</a>
 <div>
@@ -296,7 +296,7 @@ Zerotomastery.io</a>
 
 ---
 
-![](../assests/slides/01/tiobe-trend-java2.png)
+![](assets/01/tiobe-trend-java2.png)
 <div style="font-size: 5px;"><a href="https://www.i-programmer.info/news/98-languages/14712-python-trending-to-top-spot-in-tiobe-index.html">i-programmer.info</a></div>
 
 ---
@@ -315,7 +315,7 @@ Zerotomastery.io</a>
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-framework-logos.png)
+![width:800](assets/01/java-framework-logos.png)
 
   </div>
 </div>
@@ -339,7 +339,7 @@ Zerotomastery.io</a>
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/java-strengths.png)
+![width:800](assets/01/java-strengths.png)
 
   </div>
 </div>
@@ -368,7 +368,7 @@ public class HelloWorld {
 <div>
   <div class="imgbox">
 
-![width:800](../assests/slides/01/hello-console.png)
+![width:800](assets/01/hello-console.png)
 
   </div>
 </div>

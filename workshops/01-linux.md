@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:24](/assests/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
+header: "![height:24](/assets/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
 footer: "**Sharif University of Technology** • Fall 2025 • Instructor: Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -17,7 +17,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../assests/sharif-logo-blue.png)
+![bg right:30% 90%](../slides/assets/sharif-logo-blue.png)
 
 # Linux Fundamentals
 
@@ -253,7 +253,7 @@ Resources:
 # End of Presentation
 
 <div class="imgbox">
-  <img src="../assests/slides/linux/meme.png" alt="Linux Meme" width="260">
+  <img src="../assets/slides/linux/meme.png" alt="Linux Meme" width="260">
 </div>
 
 *Sharif University Workshop Series — Linux Fundamentals*
