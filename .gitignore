@@ -1,5 +1,5 @@
-*.pdf
-*.pptx
-*.html
+slides/*.pdf
+slides/*.pptx
+slides/*.html
 .idea
 .vs
