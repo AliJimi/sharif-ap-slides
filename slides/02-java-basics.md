@@ -17,15 +17,12 @@ color: #1966ab;
 -
 ---
 # Advanced Programming
+## Java Basics
 
 **Teacher:** Dr. Ali Najimi
 **Writer:** Hossein Masihi
 **Sharif University of Technology**
 **Fall 2025**
-
----
-
-# Java Basics
 
 ---
 

@@ -17,15 +17,12 @@ color: #1966ab;
 -
 ---
 # Advanced Programming
+## Object-Oriented Programming (OOP) Introduction
 
 **Teacher:** Dr. Ali Najimi
 **Writer:** Hossein Masihi
 **Sharif University of Technology**
 **Fall 2025**
-
----
-
-# Object-Oriented Programming (OOP) Introduction
 
 ---
 

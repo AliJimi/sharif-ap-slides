@@ -25,16 +25,13 @@ style: |
 ![bg right:30% 90%](../assests/sharif-logo-blue.png)
 
 # Advanced Programming
+## Java Introduction
 
 **Lecturer:** Ali Najimi  
 **Author:** Hossein Masihi  
 **Faculty of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
-
----
-
-# Java Introduction
 
 ---
 

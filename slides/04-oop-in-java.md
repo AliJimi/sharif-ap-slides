@@ -17,6 +17,7 @@ color: #1966ab;
 -
 ---
 # Advanced Programming
+## Object-Oriented Programming in Java
 
 **Teacher:** Dr. Ali Najimi
 **Writer:** Hossein Masihi
@@ -25,9 +26,6 @@ color: #1966ab;
 
 ---
 
-# Object-Oriented Programming in Java
-
----
 
 ## UML Diagrams
 
