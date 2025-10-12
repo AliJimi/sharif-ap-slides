@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AP — Workshops</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script defer src="./js/common.js"></script>
+</head>
+<body class="bg-base-100 text-base-content">
+<main class="container mx-auto px-4">
+  <section class="mt-6 grid lg:grid-cols-3 gap-6">
+    <aside id="list" class="space-y-3 lg:col-span-1"></aside>
+    <section class="lg:col-span-2 space-y-4">
+      <div id="empty" class="p-8 rounded-2xl border border-dashed text-center opacity-70">
+        <p>Select a workshop to see details.</p>
+      </div>
+      <div id="detail" class="hidden space-y-4">
+        <header class="flex items-start justify-between gap-4">
+          <div>
+            <h2 id="dTitle" class="text-xl font-semibold"></h2>
+            <p id="dMeta" class="text-sm opacity-70"></p>
+          </div>
+          <div id="dActions" class="flex flex-wrap items-center gap-2"></div>
+        </header>
+        <p id="dDesc" class="leading-7"></p>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script>
+  // Workshops page script
+  let items = [], activeId = null;
+
+  function renderList() {
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+    if (!items.length) { list.append(el("p","opacity-70 text-sm","No workshops.")); return; }
+    items.sort((a,b)=> new Date(b.date)-new Date(a.date));
+    items.forEach(it=>{
+      const card = el("article","p-4 rounded-2xl border hover:bg-base-200/40 cursor-pointer");
+      card.addEventListener("click",()=>selectItem(it.id));
+      const top = el("div","flex items-start gap-3");
+      const badge = el("div","w-10 h-10 rounded-xl bg-base-300 flex items-center justify-center font-bold", it.week ?? "-");
+      const main = el("div","flex-1 min-w-0");
+      main.append(el("h3","font-semibold truncate", it.title||"(Untitled)"));
+      const metaParts = [it.date?fmtDate(it.date):"", it.location?("• "+it.location):""].filter(Boolean).join(" ");
+      main.append(el("p","text-sm opacity-70 truncate", metaParts));
+      top.append(badge, main); card.append(top); list.append(card);
+    });
+  }
+
+  function renderDetail(it) {
+    document.getElementById("empty").classList.add("hidden");
+    document.getElementById("detail").classList.remove("hidden");
+    document.getElementById("dTitle").textContent = it.title||"(Untitled)";
+    const metaParts = [it.week?("Week "+it.week):"", it.date?fmtDate(it.date):"", it.location?("• "+it.location):""].filter(Boolean);
+    document.getElementById("dMeta").textContent = metaParts.join(" • ");
+    document.getElementById("dDesc").textContent = it.description||"";
+    const act = document.getElementById("dActions"); act.innerHTML = "";
+    const { html, pdf, external } = it.assets || {};
+    if (pdf) act.append(linkBtn("PDF", pdf));
+    if (html) act.append(linkBtn("HTML", html));
+    if (external) act.append(linkBtn("External", external));
+  }
+
+  function selectItem(id) { activeId = id; const it = items.find(x=>x.id===id); if (it) renderDetail(it); }
+
+  document.addEventListener("DOMContentLoaded", async ()=>{
+    injectBaseLayout("Workshops");
+    const data = await loadData();
+    items = data.workshops || [];
+    renderList(); if (items[0]) selectItem(items[0].id);
+  });
+</script>
+</body>
+</html>

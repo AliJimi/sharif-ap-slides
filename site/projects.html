@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AP — Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script defer src="./js/common.js"></script>
+</head>
+<body class="bg-base-100 text-base-content">
+<main class="container mx-auto px-4">
+  <section id="projects" class="mt-6 grid gap-4"></section>
+</main>
+
+<script>
+  // Projects page — supports many projects with multiple phases
+  function phaseCard(ph) {
+    const card = el("div","p-4 rounded-xl border bg-base-200");
+    const head = el("div","flex items-center justify-between");
+    head.append(el("h4","font-semibold", ph.title || "(Phase)"));
+    let meta = [ph.date?fmtDate(ph.date):"", ph.deadline?("deadline: "+fmtDate(ph.deadline)):""].filter(Boolean).join(" • ");
+    head.append(el("span","text-xs opacity-70", meta));
+    card.append(head);
+    const act = el("div","mt-2 flex gap-2");
+    const { pdf, external } = ph.assets || {};
+    if (pdf) act.append(linkBtn("PDF", pdf));
+    if (external) act.append(linkBtn("External", external));
+    card.append(act);
+    return card;
+  }
+
+  document.addEventListener("DOMContentLoaded", async ()=>{
+    injectBaseLayout("Projects");
+    const data = await loadData();
+    const box = document.getElementById("projects");
+    (data.projects || []).forEach(p=>{
+      const wrap = el("article","p-4 rounded-2xl border bg-base-100");
+      wrap.append(el("h3","text-lg font-semibold", p.title||"(Project)"));
+      if (p.description) wrap.append(el("p","opacity-80 mt-1", p.description));
+      const grid = el("div","mt-3 grid md:grid-cols-2 gap-3");
+      (p.phases||[]).forEach(ph=>grid.append(phaseCard(ph)));
+      wrap.append(grid);
+      box.append(wrap);
+    });
+  });
+</script>
+</body>
+</html>

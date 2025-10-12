@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AP — Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script defer src="./js/common.js"></script>
+</head>
+<body class="bg-base-100 text-base-content">
+<main class="container mx-auto px-4">
+  <section class="mt-6 grid md:grid-cols-3 gap-4" id="team"></section>
+</main>
+
+<script>
+  // Team page
+  function personCard(p, roleLabel) {
+    const card = el("div","card bg-base-200");
+    const body = el("div","card-body");
+    body.append(el("h3","card-title", p.name || "(Name)"));
+    body.append(el("p","opacity-70", roleLabel));
+    if (p.email) body.append(el("p","text-sm", `Email: ${p.email}`));
+    if (p.homepage) {
+      const a = el("a","link text-sm","Homepage");
+      a.href = p.homepage; a.target = "_blank"; a.rel = "noreferrer";
+      body.append(a);
+    }
+    card.append(body); return card;
+  }
+
+  document.addEventListener("DOMContentLoaded", async ()=>{
+    injectBaseLayout("Team");
+    const data = await loadData();
+    const box = document.getElementById("team");
+    const team = data.team || {};
+    if (team.instructor) box.append(personCard(team.instructor, "Instructor"));
+    (team.tas || []).forEach(t => box.append(personCard(t, t.role || "TA")));
+  });
+</script>
+</body>
+</html>
