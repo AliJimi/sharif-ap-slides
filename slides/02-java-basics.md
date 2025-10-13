@@ -1,27 +1,24 @@
 ---
-
 marp: true
 theme: default
-class: lead
 paginate: true
 backgroundColor: #ffffff
 color: #000000
+header: "![height:24](/assests/sharif-logo-blue.png) **Advanced Programming (AP) — Java Basics**"
+footer: "**Sharif University of Technology** • Fall 2025 • Dr. Ali Najimi • Hossein Masihi"
 style: |
-section {
-background-color: #ffffff;
-color: #000000;
-}
-h1, h2, h3 {
-color: #1966ab;
-}
--
+  :root { --brand: #1966ab; --text: #000000; }
+  section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif; }
+  h1, h2, h3 { color: var(--brand); font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif; }
+  ul { margin-top: 10px; }
 ---
+
 # Advanced Programming
 ## Java Basics
 
-**Teacher:** Dr. Ali Najimi
-**Writer:** Hossein Masihi
-**Sharif University of Technology**
+**Teacher:** Dr. Ali Najimi**  
+**Writer:** Hossein Masihi**  
+**Sharif University of Technology**  
 **Fall 2025**
 
 ---
@@ -29,21 +26,22 @@ color: #1966ab;
 ## Primitive Data Types
 
 * Java has **8 primitive types**:
-
-  * `byte`, `short`, `int`, `long` → integers
-  * `float`, `double` → decimals
-  * `char` → single character (Unicode)
+  * `byte`, `short`, `int`, `long` → integers  
+  * `float`, `double` → decimals  
+  * `char` → single character (Unicode)  
   * `boolean` → true/false
 * Each has a fixed size (e.g., `int` = 4 bytes, `double` = 8 bytes)
-* Example:
 
-  ```java
-  int age = 21;
-  double pi = 3.14;
-  boolean active = true;
-  ```
-
-**Image Suggestion:** Table comparing Java types, size, and sample values.
+```java
+int age = 21;
+double pi = 3.14;
+boolean active = true;
+char grade = 'A';
+long big = 3_000_000_000L;
+float ratio = 0.75f;
+byte b = 127;
+short s = 32000;
+````
 
 ---
 
@@ -52,74 +50,68 @@ color: #1966ab;
 * Variables store data in memory.
 * Syntax:
 
-  ```java
-  type name = value;
-  ```
+```java
+type name = value;
+```
+
 * Example:
 
-  ```java
-  String name = "Hossein";
-  int year = 2025;
-  ```
+```java
+String name = "Hossein";
+int year = 2025;
+```
+
 * **Rules:**
 
   * Must start with letter or underscore.
   * Case-sensitive.
   * Cannot be a reserved keyword.
 
-**Image Suggestion:** Diagram of memory cells showing variables and their values.
-
 ---
 
 ## Methods
 
 * Methods define reusable blocks of code.
-* Syntax:
 
-  ```java
-  returnType name(parameters) {
-      // body
-  }
-  ```
+```java
+returnType name(parameters) {
+    // body
+}
+```
+
 * Example:
 
-  ```java
-  int sum(int a, int b) {
-      return a + b;
-  }
-  ```
-* **Benefits:** Code reusability, readability, and structure.
+```java
+int sum(int a, int b) {
+    return a + b;
+}
+```
 
-**Image Suggestion:** Flowchart showing a function being called and returning a value.
+* **Benefits:** Code reusability, readability, and structure.
 
 ---
 
 ## Controllers: if, while, switch, for
 
 * Control the flow of execution.
-* **if / else:**
 
-  ```java
-  if (x > 10) System.out.println("Big");
-  else System.out.println("Small");
-  ```
-* **while / for:**
+```java
+if (x > 10) System.out.println("Big");
+else System.out.println("Small");
+```
 
-  ```java
-  for (int i = 0; i < 5; i++) {
-      System.out.println(i);
-  }
-  ```
-* **switch:**
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
 
-  ```java
-  switch(day) {
-      case 1: System.out.println("Monday"); break;
-      default: System.out.println("Unknown");
-  }
-  ```
-
-**Image Suggestion:** Flowchart illustrating if-else and loop logic.
+```java
+switch (day) {
+    case 1: System.out.println("Monday"); break;
+    default: System.out.println("Unknown");
+}
+```
 
 ---
 
@@ -130,39 +122,38 @@ color: #1966ab;
 * Common methods:
 
   * `length()`, `substring()`, `equals()`, `concat()`
-* Example:
 
-  ```java
-  String s = "Sharif";
-  System.out.println(s.toUpperCase());
-  ```
+```java
+String s = "Sharif";
+System.out.println(s.toUpperCase());
+```
+
 * Immutable means: once created, cannot be changed.
-
-**Image Suggestion:** Memory diagram of string immutability.
 
 ---
 
 ## Arrays
 
 * Arrays store multiple values of the same type.
-* Declaration:
 
-  ```java
-  int[] nums = {10, 20, 30};
-  ```
-* Access elements using index: `nums[0]`.
-* Loops with arrays:
+```java
+int[] nums = {10, 20, 30};
+```
 
-  ```java
-  for (int n : nums) System.out.println(n);
-  ```
-* Multidimensional example:
+* Access with index: `nums[0]`
+* Loop example:
 
-  ```java
-  int[][] matrix = {{1,2},{3,4}};
-  ```
+```java
+for (int n : nums) {
+    System.out.println(n);
+}
+```
 
-**Image Suggestion:** 2D grid visualization of an array.
+* Multidimensional:
+
+```java
+int[][] matrix = {{1, 2}, {3, 4}};
+```
 
 ---
 
@@ -173,16 +164,15 @@ public class Example {
     public static void main(String[] args) {
         int[] numbers = {2, 4, 6, 8};
         for (int n : numbers) {
-            if (n % 4 == 0)
+            if (n % 4 == 0) {
                 System.out.println(n + " is divisible by 4");
+            }
         }
     }
 }
 ```
 
 * Demonstrates variables, arrays, loops, and conditionals.
-
-**Image Suggestion:** IDE console showing program output.
 
 ---
 
@@ -193,7 +183,17 @@ public class Example {
 * Keep methods short and focused.
 * Use consistent indentation and comments.
 
-**Image Suggestion:** Screenshot of clean, formatted code.
+```java
+// Bad
+int a1=21; if(a1>18){System.out.println("ok");}
+
+// Good
+final int ADULT_AGE = 18;
+int studentAge = 21;
+if (studentAge > ADULT_AGE) {
+    System.out.println("ok");
+}
+```
 
 ---
 
