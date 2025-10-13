@@ -42,7 +42,7 @@ style: |
   * `char` → single character (Unicode)  
   * `boolean` → true/false
 * Each has a fixed size (e.g., `int` = 4 bytes, `double` = 8 bytes)
-
+---
 ```java
 int age = 21;
 double pi = 3.14;
@@ -52,7 +52,7 @@ long big = 3_000_000_000L;
 float ratio = 0.75f;
 byte b = 127;
 short s = 32000;
-````
+```
 
 ---
 
@@ -61,16 +61,16 @@ short s = 32000;
 * Variables store data in memory.
 * Syntax:
 
-```java
-type name = value;
-```
-
+    ```java
+    type name = value;
+    ```
+---
 * Example:
 
-```java
-String name = "Hossein";
-int year = 2025;
-```
+    ```java
+    String name = "Hossein";
+    int year = 2025;
+    ```
 
 * **Rules:**
 
@@ -84,19 +84,19 @@ int year = 2025;
 
 * Methods define reusable blocks of code.
 
-```java
-returnType name(parameters) {
-    // body
-}
-```
+    ```java
+    returnType name(parameters) {
+        // body
+    }
+    ```
 
 * Example:
 
-```java
-int sum(int a, int b) {
-    return a + b;
-}
-```
+    ```java
+    int sum(int a, int b) {
+        return a + b;
+    }
+    ```
 
 * **Benefits:** Code reusability, readability, and structure.
 
@@ -106,23 +106,23 @@ int sum(int a, int b) {
 
 * Control the flow of execution.
 
-```java
-if (x > 10) System.out.println("Big");
-else System.out.println("Small");
-```
+    ```java
+    if (x > 10) System.out.println("Big");
+    else System.out.println("Small");
+    ```
 
-```java
-for (int i = 0; i < 5; i++) {
-    System.out.println(i);
-}
-```
+    ```java
+    for (int i = 0; i < 5; i++) {
+        System.out.println(i);
+    }
+    ```
 
-```java
-switch (day) {
-    case 1: System.out.println("Monday"); break;
-    default: System.out.println("Unknown");
-}
-```
+    ```java
+    switch (day) {
+        case 1: System.out.println("Monday"); break;
+        default: System.out.println("Unknown");
+    }
+    ```
 
 ---
 
@@ -134,10 +134,10 @@ switch (day) {
 
   * `length()`, `substring()`, `equals()`, `concat()`
 
-```java
-String s = "Sharif";
-System.out.println(s.toUpperCase());
-```
+    ```java
+    String s = "Sharif";
+    System.out.println(s.toUpperCase());
+    ```
 
 * Immutable means: once created, cannot be changed.
 
@@ -147,24 +147,24 @@ System.out.println(s.toUpperCase());
 
 * Arrays store multiple values of the same type.
 
-```java
-int[] nums = {10, 20, 30};
-```
+    ```java
+    int[] nums = {10, 20, 30};
+    ```
 
 * Access with index: `nums[0]`
 * Loop example:
 
-```java
-for (int n : nums) {
-    System.out.println(n);
-}
-```
+    ```java
+    for (int n : nums) {
+        System.out.println(n);
+    }
+    ```
 
 * Multidimensional:
 
-```java
-int[][] matrix = {{1, 2}, {3, 4}};
-```
+    ```java
+    int[][] matrix = {{1, 2}, {3, 4}};
+    ```
 
 ---
 
@@ -194,17 +194,17 @@ public class Example {
 * Keep methods short and focused.
 * Use consistent indentation and comments.
 
-```java
-// Bad
-int a1=21; if(a1>18){System.out.println("ok");}
+    ```java
+    // Bad
+    int a1=21; if(a1>18){System.out.println("ok");}
 
-// Good
-final int ADULT_AGE = 18;
-int studentAge = 21;
-if (studentAge > ADULT_AGE) {
-    System.out.println("ok");
-}
-```
+    // Good
+    final int ADULT_AGE = 18;
+    int studentAge = 21;
+    if (studentAge > ADULT_AGE) {
+        System.out.println("ok");
+    }
+    ```
 
 ---
 
