@@ -27,8 +27,9 @@ style: |
 # Advanced Programming
 ## Java Basics
 
-**Teacher:** Dr. Ali Najimi**  
-**Writer:** Hossein Masihi**  
+**Instructor:** Ali Najimi
+**Author:** Hossein Masihi
+**Department of Computer Engineering**
 **Sharif University of Technology**  
 **Fall 2025**
 
@@ -68,7 +69,7 @@ short s = 32000;
 * Example:
 
     ```java
-    String name = "Hossein";
+    String name = "Advanced Programming!";
     int year = 2025;
     ```
 
