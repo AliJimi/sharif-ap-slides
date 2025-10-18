@@ -1,159 +1,165 @@
----
-
-marp: true
-theme: default
-class: lead
-paginate: true
-backgroundColor: #ffffff
-color: #000000
+---  
+marp: true  
+theme: default  
+paginate: true  
+backgroundColor: #ffffff  
+color: #000000  
+header: "![height:25](assets/sharif-logo-blue.png) **Advanced Programming (AP) — OOP Introduction**"  
+footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"  
 style: |
-section {
-background-color: #ffffff;
-color: #000000;
-}
-h1, h2, h3 {
-color: #1966ab;
-}
--
+  :root { --brand: #1966ab; --text: #000000; }
+  section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
+  h1, h2, h3 { color: var(--brand); font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
+  ul { margin-top: 10px; }
+  .cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: start; }
+  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; }
+  .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
+  .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
+  section.lead header, section.lead footer { display: none !important; }
 ---
-# Advanced Programming
-## Object-Oriented Programming (OOP) Introduction
 
-**Teacher:** Dr. Ali Najimi
-**Writer:** Hossein Masihi
-**Sharif University of Technology**
+<!-- _class: lead -->
+![bg right:30% 90%](assets/sharif-logo-blue.png)
+# Advanced Programming
+## Object-Oriented Programming  
+### Introduction
+
+**Lecturer:** Dr. Ali Najimi  
+**Author:** Hossein Masihi  
+**Faculty of Computer Engineering**  
+**Sharif University of Technology**  
 **Fall 2025**
+
+---
+
+# Table of Contents
+
+1. History of Programming Paradigms  
+2. Structured Programming  
+3. Procedural Programming  
+4. Object-Oriented Programming (OOP)  
+5. Objects & Classes  
+6. Four Pillars of OOP  
+7. Advantages of OOP  
+8. Practice
 
 ---
 
 ## History of Programming Paradigms
 
-* Evolution of programming:
+<div class="cols">
+<div>
 
-  1. Machine Programming → Binary instructions.
-  2. Assembly Programming → Low-level symbolic language.
-  3. Structured Programming → Use of loops, functions, modules.
-  4. Procedural Programming → Organized code using functions.
-  5. Object-Oriented Programming → Encapsulation of data and behavior.
-* Each paradigm solved problems of complexity and scalability.
+* Machine → Assembly → Structured → Procedural → OOP  
+* Each paradigm solved the growing complexity of software.  
+* OOP combines **data and behavior** into one logical unit.
 
-**Image Suggestion:** Timeline showing evolution: Machine → Assembly → C → C++ → Java.
+</div>
+<div>
+  <div class="imgbox">
 
----
+![width:800](assets/03/paradigm-evolution.png)
 
-## Machine and Assembly Programming
-
-* **Machine code:** executed directly by CPU, extremely difficult to read.
-* **Assembly language:** uses mnemonics instead of binary.
-
-  ```assembly
-  MOV AX, 5
-  ADD AX, 3
-  ```
-* Problems:
-
-  * Hardware-dependent.
-  * Hard to debug and maintain.
-  * Poor readability.
-
-**Image Suggestion:** Screenshot of assembly instructions and binary mapping.
+  </div>
+</div>
+</div>
 
 ---
 
 ## Structured Programming
 
-* Introduced **control structures**: `if`, `for`, `while`.
-* Encouraged modularization using **functions**.
-* Reduced GOTO-based spaghetti code.
-* Example in C:
+<div class="cols">
+<div>
+
+* Introduced **loops**, **functions**, and **modules**.  
+* Removed “spaghetti code”.  
+* Example:
 
   ```c
   for(int i = 0; i < 5; i++) {
       printf("%d", i);
   }
-  ```
-* Problem: hard to manage complex relationships between data and functions.
+  ````
 
-**Image Suggestion:** Diagram showing structured flow of control.
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/structured-flow.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## Procedural Programming
 
-* Focuses on **procedures/functions** as the main building block.
-* Code divided into procedures that operate on data.
+<div class="cols">
+<div>
+
+* Uses **functions (procedures)** to organize logic.
+* Data and logic are separate.
 * Example:
 
   ```c
-  void deposit(float amount) { balance += amount; }
+  void deposit(float amount) {
+      balance += amount;
+  }
   ```
-* Limitations:
 
-  * Data and methods are separate.
-  * Difficult to manage large projects.
+</div>
+<div>
+  <div class="imgbox">
 
-**Image Suggestion:** Contrast diagram: data vs procedures.
+![width:800](assets/03/procedural-example.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## Object-Oriented Programming (OOP)
 
+<div class="cols">
+<div>
+
 * Introduced in **Simula (1967)**, popularized by **C++** and **Java**.
-* Models software after real-world entities.
-* Combines **data (attributes)** and **functions (methods)** into one unit — the **object**.
-* Promotes **reuse**, **maintainability**, and **scalability**.
-
-**Image Suggestion:** Diagram showing object encapsulating data and methods.
-
----
-
-## Objects
-
-* An **object** represents a real-world entity.
-
-  * Example: `Student`, `Car`, `Book`.
-* It contains:
-
-  * **Attributes:** represent state/data.
-  * **Methods:** represent behaviors.
+* Models real-world entities as **objects**.
 * Example:
 
   ```java
   class Car {
       int speed;
-      void drive() { System.out.println("Driving..."); }
-  }
-  ```
-
-**Image Suggestion:** UML diagram showing Car class → attributes/methods.
-
----
-
-## Properties (Attributes) and Procedures (Methods)
-
-* **Attributes:** variables inside a class.
-* **Methods:** actions or behaviors of objects.
-* Together they define how an object behaves.
-* Example:
-
-  ```java
-  class Student {
-      String name;
-      void study() {
-          System.out.println(name + " is studying");
+      void drive() {
+          System.out.println("Driving...");
       }
   }
   ```
 
-**Image Suggestion:** Object diagram: Student object with properties and actions.
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/oop-objects.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
-## Classes
+## Objects and Classes
 
-* A **class** is a **blueprint** for creating objects.
-* Defines structure and behavior.
-* Example:
+<div class="cols">
+<div>
+
+* **Class:** blueprint (e.g., Car, Student).
+* **Object:** instance of a class.
 
   ```java
   class Circle {
@@ -162,42 +168,74 @@ color: #1966ab;
           return Math.PI * radius * radius;
       }
   }
-  ```
-* Object creation:
-
-  ```java
-  Circle c1 = new Circle();
-  c1.radius = 5;
-  System.out.println(c1.area());
+  Circle c = new Circle();
+  c.radius = 5;
+  System.out.println(c.area());
   ```
 
-**Image Suggestion:** Blueprint analogy: Class as design → Object as instance.
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/class-blueprint.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
-## Principles of OOP
+## Four Pillars of OOP
 
-* **Encapsulation:** binding data & methods together.
-* **Inheritance:** one class derives properties from another.
-* **Polymorphism:** one interface, multiple implementations.
-* **Abstraction:** hiding internal complexity.
+<div class="cols">
+<div>
 
-**Image Suggestion:** Infographic of 4 OOP pillars.
+1. **Encapsulation** – Hide internal data
+2. **Inheritance** – Reuse behavior
+3. **Polymorphism** – Many forms of one interface
+4. **Abstraction** – Show essentials, hide details
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/oop-pillars.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## Advantages of OOP
 
-* Code reuse (inheritance).
-* Easier debugging and testing.
-* Better organization for large projects.
-* Encourages modular and team-based development.
+<div class="cols">
+<div>
 
-**Image Suggestion:** Comparison chart: Procedural vs Object-Oriented.
+* Improves reusability
+* Supports modular design
+* Easier debugging
+* Enables teamwork
+* Better mapping to real-world problems
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/oop-benefits.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
-# Thank You 🙌
+# Thank You
 
-**Good luck and happy coding!**
+<p class="pill">AP — OOP Introduction</p>
+
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
+
