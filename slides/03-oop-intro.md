@@ -21,12 +21,11 @@ style: |
 <!-- _class: lead -->
 ![bg right:30% 90%](assets/sharif-logo-blue.png)
 # Advanced Programming
-## Object-Oriented Programming  
-### Introduction
+## Object-Oriented Programming Introduction
 
-**Lecturer:** Dr. Ali Najimi  
+**Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
-**Faculty of Computer Engineering**  
+**Department of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
 
@@ -153,13 +152,15 @@ style: |
 
 ---
 
-## Objects and Classes
+## Classes and Objects
 
 <div class="cols">
 <div>
 
 * **Class:** blueprint (e.g., Car, Student).
 * **Object:** instance of a class.
+* **Properties:** Attributes
+* **Procedures:** Methods
 
   ```java
   class Circle {
@@ -177,7 +178,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](assets/03/class-blueprint.png)
+![width:800](assets/03/turtleUMLClassDiagram1.png)
 
   </div>
 </div>
