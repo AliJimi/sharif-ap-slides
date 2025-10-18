@@ -37,7 +37,7 @@ style: |
 2. Structured Programming  
 3. Procedural Programming  
 4. Object-Oriented Programming (OOP)  
-5. Objects & Classes  
+5. Classes & Objects
 6. Four Pillars of OOP  
 7. Advantages of OOP  
 8. Practice
@@ -210,6 +210,29 @@ style: |
 
 ---
 
+## Classes and Objects: Example
+
+<div class="cols">
+<div>
+
+* Define Animal
+* Define Dog
+* Define Cat
+* Define Table
+* Define Chair
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/03/Class_Object_example.jpeg)
+
+  </div>
+</div>
+</div>
+
+---
+
 ## Advantages of OOP
 
 <div class="cols">
@@ -237,6 +260,8 @@ style: |
 # Thank You
 
 <p class="pill">AP — OOP Introduction</p>
+
+![width:800](assets/03/bill-gates.jpeg)
 
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
 
