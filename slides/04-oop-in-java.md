@@ -1,54 +1,81 @@
----
-
-marp: true
-theme: default
-class: lead
-paginate: true
-backgroundColor: #ffffff
-color: #000000
+---  
+marp: true  
+theme: default  
+paginate: true  
+backgroundColor: #ffffff  
+color: #000000  
+header: "![height:25](assets/sharif-logo-blue.png) **Advanced Programming (AP) — OOP in Java**"  
+footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"  
 style: |
-section {
-background-color: #ffffff;
-color: #000000;
-}
-h1, h2, h3 {
-color: #1966ab;
-}
--
+  :root { --brand: #1966ab; --text: #000000; }
+  section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
+  h1, h2, h3 { color: var(--brand); font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
+  ul { margin-top: 10px; }
+  .cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: start; }
+  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; }
+  .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
+  .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
+  section.lead header, section.lead footer { display: none !important; }
 ---
-# Advanced Programming
-## Object-Oriented Programming in Java
 
-**Teacher:** Dr. Ali Najimi
-**Writer:** Hossein Masihi
-**Sharif University of Technology**
+<!-- _class: lead -->
+![bg right:30% 90%](assets/sharif-logo-blue.png)
+# Advanced Programming
+## Object-Oriented Programming  
+### in Java
+
+**Lecturer:** Dr. Ali Najimi  
+**Author:** Hossein Masihi  
+**Faculty of Computer Engineering**  
+**Sharif University of Technology**  
 **Fall 2025**
 
 ---
 
+# Table of Contents
+
+1. UML Diagrams  
+2. Creating Classes  
+3. Objects in Memory  
+4. Memory Management  
+5. Class Loading  
+6. Garbage Collection  
+7. Parameter Passing  
+8. Constructor & this  
+9. static Keyword  
+10. package  
+11. Practice
+
+---
 
 ## UML Diagrams
 
-* **UML (Unified Modeling Language)** visualizes system structure.
-* Class diagram elements:
+<div class="cols">
+<div>
 
-  * Class name
-  * Attributes (fields)
-  * Methods (operations)
+* Visualize system structure.  
 * Relationships:
-
   * Association (→)
   * Inheritance (▷)
-  * Composition / Aggregation
-* Helps design before coding.
+  * Composition / Aggregation (◇)
 
-**Image Suggestion:** Example UML class diagram: `Car` → `Engine` → `Wheel`.
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/04/uml-class.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## Creating a Class in Java
 
-* Syntax:
+<div class="cols">
+<div>
 
   ```java
   public class Car {
@@ -57,23 +84,29 @@ color: #1966ab;
           System.out.println("Driving");
       }
   }
-  ```
-* Compile with `javac Car.java` → creates `Car.class`.
-* Instantiate with:
+  Car c = new Car();
+  c.drive();
+  ``` 
 
-  ```java
-  Car myCar = new Car();
-  myCar.drive();
-  ```
+</div>
+<div>
+  <div class="imgbox">
 
-**Image Suggestion:** Code snippet screenshot + console output.
+![width:800](assets/04/java-class-example.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
-## Object in Memory
+## Objects in Memory
 
-* Java objects live in **Heap memory**.
-* References stored on **Stack**.
+<div class="cols">
+<div>
+
+* Objects live in **Heap**, references on **Stack**.
 * Example:
 
   ```java
@@ -82,124 +115,46 @@ color: #1966ab;
   ```
 
   → both point to the same object.
-* Managed automatically by JVM.
+</div>
+<div>
+  <div class="imgbox">
 
-**Image Suggestion:** Diagram showing Stack → reference → Heap object.
+![width:800](assets/04/memory-stack-heap.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## Java Memory Management
 
-* Divided into regions:
+<div class="cols">
+<div>
 
-  * **Heap:** objects.
-  * **Stack:** method calls and local vars.
-  * **Method Area:** class-level data.
-  * **GC Heap:** garbage collector region.
-* Garbage Collector runs automatically.
-* No explicit `free()` or `delete` needed.
+* Heap → objects
+* Stack → local vars
+* GC → automatic cleanup
+* JVM manages lifecycle
 
-**Image Suggestion:** JVM memory layout diagram.
+</div>
+<div>
+  <div class="imgbox">
 
----
+![width:800](assets/04/jvm-memory.png)
 
-## Initializing / Loading
+  </div>
+</div>
+</div>
 
-* **Class Loading:** JVM loads class bytecode.
-* **Initialization Order:**
-
-  1. Static blocks.
-  2. Instance variables.
-  3. Constructor.
-* Example:
-
-  ```java
-  class Example {
-      static { System.out.println("Static"); }
-      Example() { System.out.println("Constructor"); }
-  }
-  ```
-
-**Image Suggestion:** Flow diagram: Loading → Initialization → Execution.
 
 ---
 
-## Object Destruction / Garbage Collection
+## Constructors and this Keyword
 
-* Java performs **Automatic Garbage Collection (GC)**.
-* Removes unreachable objects.
-* `finalize()` method (deprecated) once used for cleanup.
-* Example:
-
-  ```java
-  obj = null;  // eligible for GC
-  System.gc(); // suggest GC
-  ```
-* Developer cannot explicitly destroy objects.
-
-**Image Suggestion:** Illustration of GC reclaiming unused objects.
-
----
-
-## Parameter Passing
-
-* **Always by Value**, even for references.
-* Example:
-
-  ```java
-  void change(int x) { x = 10; }
-  int num = 5;
-  change(num);
-  System.out.println(num); // still 5
-  ```
-* For objects, reference value (memory address) is copied.
-* Changes inside method affect object fields, not reference itself.
-
-**Image Suggestion:** Diagram showing primitive vs reference passing.
-
----
-
-## Call by Value vs Call by Reference
-
-| Concept   | Java              | C++                   |
-| --------- | ----------------- | --------------------- |
-| Primitive | Passed by value   | By value or reference |
-| Object    | Reference copied  | Can use pointers      |
-| Effect    | Safe, predictable | Flexible but risky    |
-
-**Image Suggestion:** Table-style visual comparing Java and C++ behavior.
-
----
-
-## Constructor
-
-* Special method called when an object is created.
-* Has same name as the class.
-* Example:
-
-  ```java
-  class Car {
-      String model;
-      Car(String m) {
-          model = m;
-      }
-  }
-  ```
-* **Default Constructor:** provided if none defined.
-* Can be **overloaded**.
-
-**Image Suggestion:** Diagram: Object creation → constructor call.
-
----
-
-## this Keyword
-
-* Refers to the **current object**.
-* Commonly used to:
-
-  * Differentiate between fields and parameters.
-  * Call other constructors.
-* Example:
+<div class="cols">
+<div>
 
   ```java
   class Student {
@@ -210,19 +165,29 @@ color: #1966ab;
   }
   ```
 
-**Image Suggestion:** Visual showing `this` pointer referencing object.
+* Called automatically at object creation.
+* `this` → current object reference.
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/04/constructor-this.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 ## static Keyword
 
-* Belongs to the **class**, not to objects.
-* Shared across all instances.
-* Used for:
+<div class="cols">
+<div>
 
-  * Constants
-  * Utility methods (e.g., `Math.pow()`)
-* Example:
+* Belongs to the **class**, not objects.
+* Shared between all instances.
 
   ```java
   class Counter {
@@ -231,31 +196,49 @@ color: #1966ab;
   }
   ```
 
-**Image Suggestion:** Illustration of static variable shared among objects.
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/04/static-example.png)
+
+  </div>
+</div>
+</div>
 
 ---
 
-## package
+## package in Java
 
-* Packages group related classes.
-* Syntax:
+<div class="cols">
+<div>
 
   ```java
   package com.sharif.course;
-  ```
-* Helps avoid name conflicts.
-* Use `import` to include packages:
-
-  ```java
   import java.util.*;
   ```
-* Organizes large projects efficiently.
 
-**Image Suggestion:** Folder tree showing com/sharif/project structure.
+* Groups related classes.
+* Prevents naming conflicts.
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:800](assets/04/java-package-structure.png)
+
+  </div>
+</div>
+</div>
+
 
 ---
 
 # Thank You 🙌
 
-**Good luck and happy coding!**
+> “Programs must be written for people to read,  
+> and only incidentally for machines to execute.” — *Hal Abelson*
+
+<p class="pill">AP — OOP in Java</p>
+
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
