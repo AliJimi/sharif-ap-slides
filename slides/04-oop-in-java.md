@@ -24,7 +24,7 @@ style: |
 ## Object-Oriented Programming  
 ### in Java
 
-**Instructor:** Dr. Ali Najimi  
+**Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
 **Department of Computer Engineering**  
 **Sharif University of Technology**  
