@@ -24,9 +24,9 @@ style: |
 ## Object-Oriented Programming  
 ### in Java
 
-**Lecturer:** Dr. Ali Najimi  
+**Instructor:** Dr. Ali Najimi  
 **Author:** Hossein Masihi  
-**Faculty of Computer Engineering**  
+**Department of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
 
@@ -42,9 +42,8 @@ style: |
 6. Garbage Collection  
 7. Parameter Passing  
 8. Constructor & this  
-9. static Keyword  
-10. package  
-11. Practice
+9. `static` Keyword  
+10. Packaging in Java
 
 ---
 
@@ -208,13 +207,13 @@ style: |
 
 ---
 
-## package in Java
+## Packaging in Java
 
 <div class="cols">
 <div>
 
   ```java
-  package com.sharif.course;
+  package ir.sharif.course;
   import java.util.*;
   ```
 
@@ -234,7 +233,7 @@ style: |
 
 ---
 
-# Thank You 🙌
+# Thank You 
 
 > “Programs must be written for people to read,  
 > and only incidentally for machines to execute.” — *Hal Abelson*
