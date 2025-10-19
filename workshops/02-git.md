@@ -19,7 +19,7 @@ style: |
 <!-- _class: lead -->
 ![bg right:30% 90%](../slides/assets/sharif-logo-blue.png)
 # Advanced Programming
-## Git Fundamentals
+## WorkShop: Git Fundamentals
 
 **Instructor:** Ali Najimi  
 **Lecturer:**  Hossein Masihi  
@@ -100,8 +100,8 @@ git switch main                   # Switch back to main branch
 git merge feature/login           # Merge login branch into main
 ```
 
-✅ Keep branches small & focused.
-💬 Use **Pull Requests** for code review before merging.
+* Keep branches small & focused.
+* Use **Pull Requests** for code review before merging.
 
 ---
 
@@ -113,7 +113,7 @@ git push -u origin main                                # Push local commits to r
 git pull                                               # Fetch and merge latest changes
 ```
 
-🔒 Prefer **SSH keys** instead of HTTPS for secure authentication.
+Prefer **SSH keys** instead of HTTPS for secure authentication.
 
 ---
 
@@ -127,7 +127,7 @@ git add <file>            # Mark conflict as resolved
 git commit                # Finalize the merge
 ```
 
-💡 Tip: Make small commits and pull frequently to avoid conflicts.
+* Make small commits and pull frequently to avoid conflicts.
 
 ---
 
@@ -139,7 +139,7 @@ git reset --soft <commit>      # Move HEAD, keep changes staged
 git reset --hard <commit>      # Discard all changes — use with caution!
 ```
 
-⚠️ Never run `reset --hard` on shared branches (it rewrites history).
+* Never run `reset --hard` on shared branches (it rewrites history).
 
 ---
 
@@ -159,21 +159,21 @@ git push origin v1.0.0                       # Push tag to remote
 
 # Summary & Resources
 
-✅ Git helps you **track changes**, **collaborate**, and **restore versions**
-✅ Typical flow:
-→ edit → add → commit → push/pull
+* Git helps you **track changes**, **collaborate**, and **restore versions**
+* Typical flow:
+  → edit → add → commit → push/pull
 
 ---
 
-## 📚 Official Resources
+##  Resources
 
-* 📖 [Pro Git (Free Book)](https://git-scm.com/book/en/v2?utm_source=chatgpt.com)
-* 🧭 [Git Documentation](https://git-scm.com/docs?utm_source=chatgpt.com)
-* 📘 [Git Tutorial — Atlassian](https://www.atlassian.com/git/tutorials?utm_source=chatgpt.com)
+* [Pro Git (Free Book)](https://git-scm.com/book/en/v2?utm_source=chatgpt.com)
+* [Git Documentation](https://git-scm.com/docs?utm_source=chatgpt.com)
+* [Git Tutorial — Atlassian](https://www.atlassian.com/git/tutorials?utm_source=chatgpt.com)
 
 ---
 
-## 🌐 Interactive & Visual Learning
+## Interactive & Visual Learning
 
 | Site                                                                                                       | Description                                                                    |
 | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -187,9 +187,5 @@ git push origin v1.0.0                       # Push tag to remote
 <!-- _class: lead -->
 
 # End of Presentation
-
-<div class="imgbox">
-  <img src="../assets/slides/git/meme.png" alt="Git Meme" width="260">
-</div>
 
 *Sharif University Workshop Series — Git Fundamentals*

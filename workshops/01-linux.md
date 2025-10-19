@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:24](/assets/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
+header: "![height:24](../assets/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
 footer: "**Sharif University of Technology** • Fall 2025 • Instructor: Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -17,11 +17,13 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../slides/assets/sharif-logo-blue.png)
+![bg right:30% 90%](../assets/sharif-logo-blue.png)
+# Advanced Programming
+## WorkShop: Linux Fundamentals
 
-# Linux Fundamentals
-
-**Instructor:** Hossein Masihi  
+**Instructor:** Ali Najimi  
+**Lecturer:**  Hossein Masihi  
+**Department of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
 
@@ -40,7 +42,7 @@ style: |
 
 ---
 
-# 1️⃣ What is Linux?
+# What is Linux?
 
 - Open-source operating system kernel  
 - Core of distributions like Ubuntu, Debian, Fedora  
@@ -49,7 +51,7 @@ style: |
 
 ---
 
-# 2️⃣ File System Structure
+# File System Structure
 
 | Directory | Description |
 |------------|--------------|
@@ -59,12 +61,12 @@ style: |
 | `/var/log` | Log files |
 | `/usr/bin` | Installed apps and binaries |
 
-➡️ **Absolute paths** start with `/`  
-➡️ **Relative paths** depend on current directory
+* **Absolute paths** start with `/`  
+* **Relative paths** depend on current directory
 
 ---
 
-# 3️⃣ Terminal Basics
+# Terminal Basics
 
 | Command | Description |
 |----------|-------------|
@@ -91,21 +93,21 @@ rm logs.txt             # Remove the file
 
 ---
 
-# 4️⃣ Permissions
+# Permissions
 
 * Access types: `r` (read), `w` (write), `x` (execute)
 * Levels: user, group, others
 
-```bash
-ls -l                         # View permissions and owners
-chmod +x script.sh             # Add execute permission
-chmod 640 config.env           # Owner read/write, group read only
-chown root:root /etc/app.conf  # Change owner and group to root
-```
+    ```bash
+    ls -l                         # View permissions and owners
+    chmod +x script.sh             # Add execute permission
+    chmod 640 config.env           # Owner read/write, group read only
+    chown root:root /etc/app.conf  # Change owner and group to root
+    ```
 
 ---
 
-# 5️⃣ Users & Processes
+# Users & Processes
 
 ```bash
 whoami        # Show current user
@@ -123,7 +125,7 @@ htop           # Better visual process monitor (install separately)
 
 ---
 
-# 6️⃣ Package Management
+# Package Management
 
 | Distribution  | Tool     | Example                 |
 | ------------- | -------- | ----------------------- |
@@ -139,7 +141,7 @@ sudo apt remove nano                     # Remove a package
 
 ---
 
-# 7️⃣ Bash & Shell Scripting 🧠
+# Bash & Shell Scripting 
 
 Automate tasks using Bash scripts
 File extension: `.sh`
@@ -223,7 +225,7 @@ echo "Backup completed!"        # Print confirmation
 
 ---
 
-# 8️⃣ Hands-on Practice
+# Hands-on Practice
 
 1. Create a file named `hello.sh`
 2. Add a shebang line (`#!/bin/bash`)
@@ -233,12 +235,12 @@ echo "Backup completed!"        # Print confirmation
 
 ---
 
-# 9️⃣ Summary & References
+# Summary & References
 
-✅ Linux = stable, secure, flexible
-✅ Know file system + terminal basics
-✅ Manage users, permissions, packages
-✅ Start writing small Bash scripts
+* Linux = stable, secure, flexible
+* Know file system + terminal basics
+* Manage users, permissions, packages
+* Start writing small Bash scripts
 
 Resources:
 
@@ -251,9 +253,5 @@ Resources:
 <!-- _class: lead -->
 
 # End of Presentation
-
-<div class="imgbox">
-  <img src="../assets/slides/linux/meme.png" alt="Linux Meme" width="260">
-</div>
 
 *Sharif University Workshop Series — Linux Fundamentals*
