@@ -21,8 +21,7 @@ style: |
 <!-- _class: lead -->
 ![bg right:30% 90%](assets/sharif-logo-blue.png)
 # Advanced Programming
-## Object-Oriented Programming  
-### in Java
+## Object-Oriented Programming in Java
 
 **Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
@@ -141,7 +140,7 @@ style: |
 <div>
   <div class="imgbox">
 
-![width:800](assets/04/jvm-memory.png)
+![width:1000](assets/04/jvm-memory.png)
 
   </div>
 </div>
@@ -232,11 +231,20 @@ style: |
 
 
 ---
+<!-- _class: lead -->
 
+<div class="cols">
+<div>
 # Thank You 
 
 <p class="pill">AP — OOP in Java</p>
+</div>
+</div>
+<div>
+  <div class="imgbox">
 
-![width:800](assets/04/steve.jpg)
+![width:600](assets/04/steve.jpg)
+  </div>
+</div>
 
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
