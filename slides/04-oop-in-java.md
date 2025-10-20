@@ -235,9 +235,8 @@ style: |
 
 # Thank You 
 
-> “Programs must be written for people to read,  
-> and only incidentally for machines to execute.” — *Hal Abelson*
-
 <p class="pill">AP — OOP in Java</p>
+
+![width:800](assets/04/steve.jpg)
 
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
