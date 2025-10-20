@@ -246,7 +246,7 @@ Resources:
 
 * [linuxjourney.com](https://linuxjourney.com)
 * [linuxcommand.org](https://linuxcommand.org)
-* `man bash`, `man chmod`
+
 
 ---
 

@@ -161,7 +161,7 @@ git push origin v1.0.0                       # Push tag to remote
 
 * Git helps you **track changes**, **collaborate**, and **restore versions**
 * Typical flow:
-  → edit → add → commit → push/pull
+    - edit → add → commit → push/pull
 
 ---
 
