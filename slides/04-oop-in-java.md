@@ -32,17 +32,115 @@ style: |
 ---
 
 # Table of Contents
+<div class="cols">
+<div>
 
-1. UML Diagrams  
-2. Creating Classes  
-3. Objects in Memory  
-4. Memory Management  
-5. Class Loading  
-6. Garbage Collection  
-7. Parameter Passing  
-8. Constructor & this  
-9. `static` Keyword  
-10. Packaging in Java
+1. SDLC — Software Development Life Cycle  
+2. SSDLC — Secure Software Development Life Cycle  
+3. UML Diagrams  
+4. Creating Classes  
+5. Objects in Memory  
+6. Memory Management  
+7. Class Loading  
+8. Garbage Collection  
+9. Parameter Passing
+</div>
+<div>
+
+10. Constructor & this  
+11. `static` Keyword  
+12. Packaging in Java
+</div>
+</div>
+
+---
+
+## SDLC — Software Development Life Cycle
+
+<div class="cols">
+<div>
+
+* **SDLC** defines structured steps for building software.  
+* Common phases:
+  1. **Requirement Analysis**  
+  2. **Design**  
+  3. **Implementation (Coding)**  
+  4. **Testing**  
+  5. **Deployment**  
+  6. **Maintenance**
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/04/sdlc-cycle.png)
+  </div>
+</div>
+</div>
+
+---
+
+<div class="cols">
+<div>
+
+* Ensures:
+  * Predictable delivery  
+  * Quality assurance  
+  * Cost & time control  
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/04/sdlc-cycle.png)
+  </div>
+</div>
+</div>
+
+---
+
+## SSDLC — Secure Software Development Life Cycle
+
+
+<div class="cols">
+<div>
+
+* **SSDLC** = SDLC + integrated **security at every stage**.  
+* Adds security practices such as:
+  * Threat modeling  
+  * Secure coding guidelines  
+  * Security testing & auditing  
+  * Vulnerability management
+
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/04/ssdlc-model.png)
+  </div>
+</div>
+</div>
+
+---
+
+<div class="cols">
+<div>
+
+* Goal: build software that is **secure by design**.  
+* Common frameworks:
+  * Microsoft SDL  
+  * OWASP SAMM  
+  * NIST SSDF  
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/04/ssdlc-model.png)
+  </div>
+</div>
+</div>
 
 ---
 
@@ -67,7 +165,6 @@ style: |
 </div>
 </div>
 
-
 ---
 
 ## Creating a Class in Java
@@ -84,7 +181,7 @@ style: |
   }
   Car c = new Car();
   c.drive();
-  ``` 
+````
 
 </div>
 <div>
@@ -95,7 +192,6 @@ style: |
   </div>
 </div>
 </div>
-
 
 ---
 
@@ -113,6 +209,7 @@ style: |
   ```
 
   → both point to the same object.
+
 </div>
 <div>
   <div class="imgbox">
@@ -122,7 +219,6 @@ style: |
   </div>
 </div>
 </div>
-
 
 ---
 
@@ -146,7 +242,6 @@ style: |
 </div>
 </div>
 
-
 ---
 
 ## Constructors and this Keyword
@@ -154,14 +249,14 @@ style: |
 <div class="cols">
 <div>
 
-  ```java
-  class Student {
-      String name;
-      Student(String name) {
-          this.name = name;
-      }
-  }
-  ```
+```java
+class Student {
+    String name;
+    Student(String name) {
+        this.name = name;
+    }
+}
+```
 
 * Called automatically at object creation.
 * `this` → current object reference.
@@ -175,7 +270,6 @@ style: |
   </div>
 </div>
 </div>
-
 
 ---
 
@@ -211,10 +305,10 @@ style: |
 <div class="cols">
 <div>
 
-  ```java
-  package ir.sharif.course;
-  import java.util.*;
-  ```
+```java
+package ir.sharif.course;
+import java.util.*;
+```
 
 * Groups related classes.
 * Prevents naming conflicts.
@@ -229,8 +323,8 @@ style: |
 </div>
 </div>
 
-
 ---
+
 <!-- _class: lead -->
 
 <div class="cols">
@@ -244,6 +338,7 @@ style: |
   <div class="imgbox">
 
 ![width:600](assets/04/steve.jpg)
+
   </div>
 </div>
 
