@@ -20,9 +20,7 @@ style: |
 
 <!-- _class: lead -->
 ![bg right:30% 90%](assets/sharif-logo-blue.png)
-
 # Advanced Programming
-
 ## From Software Engineering to OOP in Java
 
 **Instructor:** Mr. Ali Najimi  
@@ -62,10 +60,10 @@ style: |
 
 </div>
 <div>
-  <div class="imgbox">
+<div class="imgbox">
 
 ![width:850](assets/05/expandable-extendable.png)
-  </div>
+</div>
 </div>
 </div>
 
@@ -76,10 +74,10 @@ style: |
 <div class="cols">
 <div>
 
-| Principle              | Focus                                          |
-|------------------------|------------------------------------------------|
-| **Do the Right Thing** | Build the correct system that meets real needs |
-| **Do Things Right**    | Build it efficiently, cleanly, and correctly   |
+| Principle | Focus                             |
+|------------|-----------------------------------|
+| **Do the Right Thing** | Build a system effectively        |
+| **Do Things Right** | Build it efficiently, and cleanly |
 
 > Example:  
 > The “Right Thing” is to create a Zoo system that manages animals —  
@@ -356,6 +354,7 @@ public void testEat() {
   
 ![width:600](assets/05/steve.png)
   </div>
+</div>
 </div>
 
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
