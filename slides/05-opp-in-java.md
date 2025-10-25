@@ -20,10 +20,12 @@ style: |
 
 <!-- _class: lead -->
 ![bg right:30% 90%](assets/sharif-logo-blue.png)
+
 # Advanced Programming
+
 ## From Software Engineering to OOP in Java
 
-**Instructor:** Ali Najimi  
+**Instructor:** Mr. Ali Najimi  
 **Author:** Hossein Masihi  
 **Department of Computer Engineering**  
 **Sharif University of Technology**  
@@ -33,12 +35,12 @@ style: |
 
 # Table of Contents
 
-1. Expandable vs Extendable  
-2. Do the Right Thing vs Do Things Right  
-3. What is Software Engineering  
-4. Applying SDLC to a Real Case  
-5. Case Study: Zoo Management System  
-6. From UML to Java Implementation  
+1. Expandable vs Extendable
+2. Do the Right Thing vs Do Things Right
+3. What is Software Engineering
+4. Applying SDLC to a Real Case
+5. Case Study — Zoo Management System
+6. From UML to Java Implementation
 7. Testing and Maintenance
 
 ---
@@ -58,12 +60,14 @@ style: |
 
 > Good software is both expandable and extendable.
 
+</div>
 <div>
-<div class="imgbox">
-![width:850](assets/05/Exten.png)
-</div>
-</div>
+  <div class="imgbox">
 
+![width:850](assets/05/expandable-extendable.png)
+  </div>
+</div>
+</div>
 
 ---
 
@@ -72,10 +76,10 @@ style: |
 <div class="cols">
 <div>
 
-| Principle | Focus |
-|------------|--------|
+| Principle              | Focus                                          |
+|------------------------|------------------------------------------------|
 | **Do the Right Thing** | Build the correct system that meets real needs |
-| **Do Things Right** | Build it efficiently, cleanly, and correctly |
+| **Do Things Right**    | Build it efficiently, cleanly, and correctly   |
 
 > Example:  
 > The “Right Thing” is to create a Zoo system that manages animals —  
@@ -84,6 +88,7 @@ style: |
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/do-right.png)
   </div>
 </div>
@@ -96,18 +101,19 @@ style: |
 <div class="cols">
 <div>
 
-* Systematic approach to software design and construction.  
+* Systematic approach to software design and construction.
 * Key elements:
-  - Process models (like **SDLC**)  
-  - Documentation and design  
-  - Quality control and testing  
-  - Maintenance and scalability
+    - Process models (like **SDLC**)
+    - Documentation and design
+    - Quality control and testing
+    - Maintenance and scalability
 
 > The goal: to make software **reliable**, **maintainable**, and **evolvable**.
 
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/software-engineering.png)
   </div>
 </div>
@@ -117,17 +123,17 @@ style: |
 
 # Applying SDLC: Overview
 
-* SDLC defines **how** software evolves from idea to deployment.  
+* SDLC defines **how** software evolves from idea to deployment.
 * We’ll now apply it step-by-step to a real system:  
   **The Zoo Management System.**
 
-| Phase | Description |
-|--------|-------------|
-| 1 | Requirement Analysis |
-| 2 | Design (UML, Architecture) |
-| 3 | Implementation (Java / OOP) |
-| 4 | Testing |
-| 5 | Deployment & Maintenance |
+| Phase | Description                 |
+|-------|-----------------------------|
+| 1     | Requirement Analysis        |
+| 2     | Design (UML, Architecture)  |
+| 3     | Implementation (Java / OOP) |
+| 4     | Testing                     |
+| 5     | Deployment & Maintenance    |
 
 ---
 
@@ -137,17 +143,21 @@ style: |
 <div>
 
 ### Problem Definition
+
 A zoo needs a system to:
-* Track animals, health, and feeding schedules  
-* Manage caretakers and vets  
-* Generate daily and monthly reports  
+
+* Track animals, health, and feeding schedules
+* Manage caretakers and vets
+* Generate daily and monthly reports
 
 ### Goal
+
 To design and implement a **modular**, **extendable**, and **object-oriented** solution.
 
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-overview.png)
   </div>
 </div>
@@ -161,20 +171,22 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 <div>
 
 ### Functional Requirements
-* Create - Read - Update - Delete
-* For Animals, Storage, etc.
-* Record feedings and treatments  
-* Manage staff and shifts  
-* Generate reports and alerts  
+
+* Add / edit / remove animals
+* Record feedings and treatments
+* Manage staff and shifts
+* Generate reports and alerts
 
 ### Non-Functional Requirements
-* Secure login for staff  
-* Fast response time (<1s)  
-* Future-proof, extendable design  
+
+* Secure login for staff
+* Fast response time (<1s)
+* Future-proof, extendable design
 
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-requirements.png)
   </div>
 </div>
@@ -188,34 +200,21 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 <div>
 
 ### Architecture Layers
-* **UI Layer:** Staff Dashboard  
-* **Logic Layer:** ZooManager (Java)  
-* **Data Layer:** MySQL / PostgreSQL  
+
+* **UI Layer:** Staff Dashboard
+* **Logic Layer:** ZooManager (Java)
+* **Data Layer:** MySQL / PostgreSQL
 
 ### UML Class Diagram
-Represents the main system entities.
 
-```plaintext
-+-------------+
-| Animal      |
-|-------------|
-| name, age   |
-|-------------|
-| eat(), sleep() |
-+-------------+
-       ▲
-       │
-+-------------+
-| Mammal      |
-|-------------|
-| feedMilk()  |
-+-------------+
-````
+Represents the main system entities.
 
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/05/zoo-uml.png)
+
+![width:550](assets/05/zoo-uml.png)
+  
   </div>
 </div>
 </div>
@@ -224,8 +223,6 @@ Represents the main system entities.
 
 # 3. Implementation — From UML to Java
 
-<div class="cols">
-<div>
 
 ```java
 public class Animal {
@@ -242,6 +239,10 @@ public class Animal {
     }
 }
 ```
+---
+
+<div class="cols">
+<div>
 
 ```java
 public class Mammal extends Animal {
@@ -258,6 +259,7 @@ public class Mammal extends Animal {
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-java.png)
   </div>
 </div>
@@ -279,6 +281,14 @@ public void testEat() {
     lion.eat(); // Expected: "Lion is eating..."
 }
 ```
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/05/zoo-test.png)
+  </div>
+</div>
+</div>
 
 ### Integration Tests
 
@@ -287,13 +297,7 @@ public void testEat() {
 
 > Testing validates both correctness and integration.
 
-</div>
-<div>
-  <div class="imgbox">
-![width:850](assets/05/zoo-test.png)
-  </div>
-</div>
-</div>
+
 
 ---
 
@@ -307,15 +311,16 @@ public void testEat() {
 * Connect to a MySQL/PostgreSQL database
 * Future maintenance:
 
-  * Add new animal subclasses
-  * Extend report generation
-  * Improve UI responsiveness
+    * Add new animal subclasses
+    * Extend report generation
+    * Improve UI responsiveness
 
 > The system remains extendable without rewriting core logic.
 
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-deploy.png)
   </div>
 </div>
@@ -326,7 +331,7 @@ public void testEat() {
 # Final Discussion
 
 | Concept                | In Practice                                     |
-| ---------------------- | ----------------------------------------------- |
+|------------------------|-------------------------------------------------|
 | **Expandable**         | More animals, cages, or DB capacity             |
 | **Extendable**         | New modules like visitor management             |
 | **Do the Right Thing** | Address the zoo’s real operational needs        |
@@ -342,12 +347,14 @@ public void testEat() {
 
 <div class="cols">
 <div>
+
 # Thank You  
 <p class="pill">From Software Engineering to OOP in Java</p>
 </div>
 <div>
   <div class="imgbox">
-![width:600](assets/05/steve.jpg)
+  
+![width:600](assets/05/steve.png)
   </div>
 </div>
 
