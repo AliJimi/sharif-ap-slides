@@ -7,20 +7,24 @@ color: #000000
 header: "![height:25](assets/sharif-logo-blue.png) **Advanced Programming (AP) — OOP in Java**"  
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"  
 style: |
-  :root { --brand: #1966ab; --text: #000000; }
-  section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
-  h1, h2, h3 { color: var(--brand); font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
-  ul { margin-top: 10px; }
-  .cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: start; }
-  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; }
-  .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
-  .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
-  section.lead header, section.lead footer { display: none !important; }
+:root { --brand: #1966ab; --text: #000000; }
+section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: "Inter","Segoe UI","Roboto","
+Helvetica Neue",Arial,sans-serif; }
+h1, h2, h3 { color: var(--brand); font-family: "Inter","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif; }
+ul { margin-top: 10px; }
+.cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: start; }
+.imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; }
+.imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
+.pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(
+--brand); font-size:20px; }
+section.lead header, section.lead footer { display: none !important; }
 ---
 
 <!-- _class: lead -->
 ![bg right:30% 90%](assets/sharif-logo-blue.png)
+
 # Advanced Programming
+
 ## Object-Oriented Programming in Java
 
 **Instructor:** Ali Najimi  
@@ -32,24 +36,27 @@ style: |
 ---
 
 # Table of Contents
+
 <div class="cols">
 <div>
 
-1. SDLC — Software Development Life Cycle  
-2. SSDLC — Secure Software Development Life Cycle  
-3. UML Diagrams  
-4. Creating Classes  
-5. Objects in Memory  
-6. Memory Management  
-7. Class Loading  
-8. Garbage Collection  
+1. SDLC — Software Development Life Cycle
+2. SSDLC — Secure Software Development Life Cycle
+3. UML Diagrams
+4. Creating Classes
+5. Objects in Memory
+6. Memory Management
+7. Class Loading
+8. Garbage Collection
 9. Parameter Passing
+
 </div>
 <div>
 
-10. Constructor & this  
-11. `static` Keyword  
+10. Constructor & this
+11. `static` Keyword
 12. Packaging in Java
+
 </div>
 </div>
 
@@ -60,14 +67,14 @@ style: |
 <div class="cols">
 <div>
 
-* **SDLC** defines structured steps for building software.  
+* **SDLC** defines structured steps for building software.
 * Common phases:
-  1. **Requirement Analysis**  
-  2. **Design**  
-  3. **Implementation (Coding)**  
-  4. **Testing**  
-  5. **Deployment**  
-  6. **Maintenance**
+    1. **Requirement Analysis**
+    2. **Design**
+    3. **Implementation (Coding)**
+    4. **Testing**
+    5. **Deployment**
+    6. **Maintenance**
 
 </div>
 <div>
@@ -84,9 +91,9 @@ style: |
 <div>
 
 * Ensures:
-  * Predictable delivery  
-  * Quality assurance  
-  * Cost & time control  
+    * Predictable delivery
+    * Quality assurance
+    * Cost & time control
 
 </div>
 <div>
@@ -101,17 +108,15 @@ style: |
 
 ## SSDLC — Secure Software Development Life Cycle
 
-
 <div class="cols">
 <div>
 
-* **SSDLC** = SDLC + integrated **security at every stage**.  
+* **SSDLC** = SDLC + integrated **security at every stage**.
 * Adds security practices such as:
-  * Threat modeling  
-  * Secure coding guidelines  
-  * Security testing & auditing  
-  * Vulnerability management
-
+    * Threat modeling
+    * Secure coding guidelines
+    * Security testing & auditing
+    * Vulnerability management
 
 </div>
 <div>
@@ -127,11 +132,11 @@ style: |
 <div class="cols">
 <div>
 
-* Goal: build software that is **secure by design**.  
+* Goal: build software that is **secure by design**.
 * Common frameworks:
-  * Microsoft SDL  
-  * OWASP SAMM  
-  * NIST SSDF  
+    * Microsoft SDL
+    * OWASP SAMM
+    * NIST SSDF
 
 </div>
 <div>
@@ -149,11 +154,11 @@ style: |
 <div class="cols">
 <div>
 
-* Visualize system structure.  
+* Visualize system structure.
 * Relationships:
-  * Association (→)
-  * Inheritance (▷)
-  * Composition / Aggregation (◇)
+    * Association (→)
+    * Inheritance (▷)
+    * Composition / Aggregation (◇)
 
 </div>
 <div>
@@ -174,13 +179,17 @@ style: |
 
   ```java
   public class Car {
-      String color;
-      void drive() {
-          System.out.println("Driving");
-      }
-  }
-  Car c = new Car();
-  c.drive();
+    String color;
+
+    void drive() {
+        System.out.println("Driving");
+    }
+}
+
+Car c = new Car();
+  c.
+
+drive();
 ````
 
 </div>
@@ -252,6 +261,7 @@ style: |
 ```java
 class Student {
     String name;
+
     Student(String name) {
         this.name = name;
     }
@@ -307,6 +317,7 @@ class Student {
 
 ```java
 package ir.sharif.course;
+
 import java.util.*;
 ```
 
@@ -329,7 +340,8 @@ import java.util.*;
 
 <div class="cols">
 <div>
-# Thank You 
+
+# Thank You
 
 <p class="pill">AP — OOP in Java</p>
 </div>

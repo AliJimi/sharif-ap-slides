@@ -23,7 +23,7 @@ style: |
 # Advanced Programming
 ## From Software Engineering to OOP in Java
 
-**Instructor:** Mr. Ali Najimi  
+**Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
 **Department of Computer Engineering**  
 **Sharif University of Technology**  
@@ -37,7 +37,7 @@ style: |
 2. Do the Right Thing vs Do Things Right  
 3. What is Software Engineering  
 4. Applying SDLC to a Real Case  
-5. Case Study — Zoo Management System  
+5. Case Study: Zoo Management System  
 6. From UML to Java Implementation  
 7. Testing and Maintenance
 
@@ -58,13 +58,12 @@ style: |
 
 > Good software is both expandable and extendable.
 
-</div>
 <div>
-  <div class="imgbox">
-![width:850](assets/07/expandable-extendable.png)
-  </div>
+<div class="imgbox">
+![width:850](assets/05/Exten.png)
 </div>
 </div>
+
 
 ---
 
@@ -85,7 +84,7 @@ style: |
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/do-right.png)
+![width:850](assets/05/do-right.png)
   </div>
 </div>
 </div>
@@ -109,7 +108,7 @@ style: |
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/software-engineering.png)
+![width:850](assets/05/software-engineering.png)
   </div>
 </div>
 </div>
@@ -149,7 +148,7 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-overview.png)
+![width:850](assets/05/zoo-overview.png)
   </div>
 </div>
 </div>
@@ -162,7 +161,8 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 <div>
 
 ### Functional Requirements
-* Add / edit / remove animals  
+* Create - Read - Update - Delete
+* For Animals, Storage, etc.
 * Record feedings and treatments  
 * Manage staff and shifts  
 * Generate reports and alerts  
@@ -175,7 +175,7 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-requirements.png)
+![width:850](assets/05/zoo-requirements.png)
   </div>
 </div>
 </div>
@@ -215,7 +215,7 @@ Represents the main system entities.
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-uml.png)
+![width:850](assets/05/zoo-uml.png)
   </div>
 </div>
 </div>
@@ -258,7 +258,7 @@ public class Mammal extends Animal {
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-java.png)
+![width:850](assets/05/zoo-java.png)
   </div>
 </div>
 </div>
@@ -290,7 +290,7 @@ public void testEat() {
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-test.png)
+![width:850](assets/05/zoo-test.png)
   </div>
 </div>
 </div>
@@ -316,7 +316,7 @@ public void testEat() {
 </div>
 <div>
   <div class="imgbox">
-![width:850](assets/07/zoo-deploy.png)
+![width:850](assets/05/zoo-deploy.png)
   </div>
 </div>
 </div>
@@ -347,7 +347,7 @@ public void testEat() {
 </div>
 <div>
   <div class="imgbox">
-![width:600](assets/07/steve.jpg)
+![width:600](assets/05/steve.jpg)
   </div>
 </div>
 
