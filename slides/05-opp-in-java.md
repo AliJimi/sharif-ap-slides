@@ -58,12 +58,14 @@ style: |
 
 > Good software is both expandable and extendable.
 
+</div>
 <div>
 <div class="imgbox">
-![width:850](assets/05/Exten.png)
-</div>
-</div>
 
+![width:850](assets/05/expandable-extendable.png)
+</div>
+</div>
+</div>
 
 ---
 
@@ -72,18 +74,19 @@ style: |
 <div class="cols">
 <div>
 
-| Principle | Focus |
-|------------|--------|
-| **Do the Right Thing** | Build the correct system that meets real needs |
-| **Do Things Right** | Build it efficiently, cleanly, and correctly |
+| Principle | Focus                             |
+|------------|-----------------------------------|
+| **Do the Right Thing** | Build a system effectively        |
+| **Do Things Right** | Build it efficiently, and cleanly |
 
 > Example:  
-> The “Right Thing” is to create a Zoo system that manages animals —  
-> “Doing it Right” means using solid OOP design, testing, and documentation.
+> `Do the Right Thing:` Create a Zoo system: manages animals  
+> `Doing it Right:` Using OOP design, have testing, documentation.
 
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/do-right.png)
   </div>
 </div>
@@ -108,6 +111,7 @@ style: |
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/software-engineering.png)
   </div>
 </div>
@@ -148,6 +152,7 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-overview.png)
   </div>
 </div>
@@ -175,6 +180,7 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-requirements.png)
   </div>
 </div>
@@ -215,6 +221,7 @@ Represents the main system entities.
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-uml.png)
   </div>
 </div>
@@ -258,6 +265,7 @@ public class Mammal extends Animal {
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-java.png)
   </div>
 </div>
@@ -290,6 +298,7 @@ public void testEat() {
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-test.png)
   </div>
 </div>
@@ -316,6 +325,7 @@ public void testEat() {
 </div>
 <div>
   <div class="imgbox">
+
 ![width:850](assets/05/zoo-deploy.png)
   </div>
 </div>
@@ -340,15 +350,18 @@ public void testEat() {
 
 <!-- _class: lead -->
 
+# Thank You
+
 <div class="cols">
-<div>
-# Thank You  
+<div> 
 <p class="pill">From Software Engineering to OOP in Java</p>
 </div>
 <div>
   <div class="imgbox">
+
 ![width:600](assets/05/steve.jpg)
   </div>
+</div>
 </div>
 
 *Advanced Programming – Fall 2025 – Sharif University of Technology*
