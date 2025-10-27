@@ -170,7 +170,6 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 * For Animals, Storage, etc.
 * Record feedings and treatments  
 * Manage staff and shifts  
-* Generate reports and alerts  
 
 ### Non-Functional Requirements
 * Secure login for staff  
@@ -194,21 +193,36 @@ To design and implement a **modular**, **extendable**, and **object-oriented** s
 <div>
 
 ### Architecture Layers
-* **UI Layer:** Staff Dashboard  
-* **Logic Layer:** ZooManager (Java)  
-* **Data Layer:** MySQL / PostgreSQL  
+* **UI Layer:** Staff Dashboard
+* **Logic Layer:** ZooManager (Java)
+* **Data Layer:** MySQL / PostgreSQL
+
+</div>
+<div>
+  <div class="imgbox">
+
+![width:850](assets/05/zoo.png)
+  </div>
+</div>
+</div>
+
+---
+
+# 2. System Design — UML & Architecture
+
+<div class="cols">
+<div>
 
 ### UML Class Diagram
-Represents the main system entities.
 
 ```plaintext
-+-------------+
-| Animal      |
-|-------------|
-| name, age   |
-|-------------|
++----------------+
+| Animal         |
+|----------------|
+| name, age      |
+|----------------|
 | eat(), sleep() |
-+-------------+
++----------------+
        ▲
        │
 +-------------+
@@ -236,19 +250,26 @@ Represents the main system entities.
 
 ```java
 public class Animal {
-    private String name;
-    private int age;
+  private String name;
+  private int age;
 
-    public Animal(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+  public Animal(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    public void eat() {
-        System.out.println(name + " is eating...");
-    }
+  public void eat() {
+    System.out.println(name + " is eating...");
+  }
 }
 ```
+
+---
+
+# 3. Implementation — From UML to Java
+
+<div class="cols">
+<div>
 
 ```java
 public class Mammal extends Animal {
@@ -293,7 +314,7 @@ public void testEat() {
 * Add animal → Assign caretaker → Generate report
 * Check data persistence and relations
 
-> Testing validates both correctness and integration.
+> Testing validates: correctness and integration.
 
 </div>
 <div>
@@ -326,7 +347,7 @@ public void testEat() {
 <div>
   <div class="imgbox">
 
-![width:850](assets/05/zoo-deploy.png)
+![width:850](assets/05/images.png)
   </div>
 </div>
 </div>
@@ -359,7 +380,7 @@ public void testEat() {
 <div>
   <div class="imgbox">
 
-![width:600](assets/05/steve.jpg)
+![width:800](assets/05/linus.jpg)
   </div>
 </div>
 </div>
