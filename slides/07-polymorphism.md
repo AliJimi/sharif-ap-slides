@@ -8,13 +8,27 @@ header: "![height:25](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png) **
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
-  section { background-color: #ffffff; color: var(--text); font-size: 28px; font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif; }
-  h1, h2, h3 { color: var(--brand); font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif; }
-  ul { margin-top: 10px; }
-  .cols { display: grid; grid-template-columns: 1.5fr 0.5fr; gap: 28px; align-items: start; }
-  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; }
+  section {
+    background-color: #ffffff;
+    color: var(--text);
+    font-size: 28px;
+    font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
+    animation: fadeIn 0.9s ease-in;
+  }
+  h1, h2, h3 {
+    color: var(--brand);
+    font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
+    animation: slideUp 0.8s ease-out;
+  }
+  ul, p, pre, table { animation: fadeIn 1s ease-in; }
+  code { font-size: 90%; }
+  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
+  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
   .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
   .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+  @keyframes zoomIn { from { opacity: 0; transform: scale(0.9);} to { opacity: 1; transform: scale(1);} }
   section.lead header, section.lead footer { display: none !important; }
 
 ---
@@ -22,7 +36,7 @@ style: |
 <!-- _class: lead -->
 ![bg right:30% 90%](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png)
 # Advanced Programming
-## Polymorphism in Java
+## Polymorphism in Java — Extended Edition
 
 **Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
@@ -34,11 +48,20 @@ style: |
 
 # Table of Contents
 
-1. Polymorphism — Concept  
-2. Implementing Polymorphism with Inheritance  
-3. The `final` Keyword and Restrictions  
-4. Code Examples  
-5. Summary  
+1. Polymorphism — Concept
+2. Compile-time (Overloading)
+3. Runtime (Overriding)
+4. How It Works with Inheritance
+5. The `final` Keyword
+6. Dynamic Binding Explained
+7. Summary
+
+---
+
+<div class="imgbox">
+  
+  ![width:700](assets/07/polymorphism-java.png)
+  </div>
 
 ---
 
@@ -47,203 +70,283 @@ style: |
 <div class="cols">
 <div>
 
-* **Polymorphism** means *“many forms.”*  
-* Same interface or method name can lead to **different behaviors**.  
-* Enables **flexibility** and **extensibility** in OOP.  
+* **Polymorphism** = “many forms”
+* Same method name, **different behavior**
+* Enables flexibility and **code reuse**
 
-Two major types:
-1. **Compile-time** (Method Overloading)  
-2. **Runtime** (Method Overriding)
+Two types:
+1. **Compile-time (Static)** → *Overloading*
+2. **Runtime (Dynamic)** → *Overriding*
 
-> In Java, runtime polymorphism happens via **method overriding**.
+> JVM decides which method to call at runtime for overriding.
 
 </div>
 <div>
   <div class="imgbox">
 
-![width:750](assets/07/polymorphism-concept.png)
+  ![width:850](assets/07/polymorphism-concept.png)
+  
   </div>
 </div>
 </div>
 
 ---
 
-# Example — Concept
+# Compile-time Polymorphism — Method **Overloading**
+
+```java
+class Printer {
+    void print(int value) {System.out.println("Integer: " + value);}
+    void print(String value) {System.out.println("String: " + value);}
+    void print(double value, int count) {
+        System.out.println("Double: " + value + ", count: " + count);
+    }
+}
+```
+```java
+Printer p = new Printer();
+p.print(42);
+p.print("Sharif");
+p.print(3.14, 2);
+```
+
+> ✅ Same method name, different **parameter list**.  
+> ❌ Return type alone cannot differentiate methods.
+
+---
+
+# Notes — Overloading Rules
+
+| Rule | Description |
+| ---- | ------------ |
+| Parameter count | Must differ |
+| Parameter type | Can differ |
+| Return type | Ignored by compiler |
+| Access modifier | Can change |
+| Occurs | **At compile time** |
+
+> The compiler picks the best match for the arguments.
+
+---
+
+# Runtime Polymorphism — Method **Overriding**
 
 ```java
 class Animal {
-    void sound() {System.out.println("Some generic sound");}
-    }
-class Dog extends Animal {
-    void sound() {System.out.println("Woof");}
+    void sound() { System.out.println("Animal sound"); }
 }
+
+class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("Woof"); }
+}
+
 class Cat extends Animal {
-    void sound() {System.out.println("Meow");}
+    @Override
+    void sound() { System.out.println("Meow"); }
 }
 ```
+---
+
 ```java
 Animal a1 = new Dog();
 Animal a2 = new Cat();
-a1.sound();  // Woof
-a2.sound();  // Meow
+a1.sound(); // Woof
+a2.sound(); // Meow
 ```
 
-> One method call → different outputs depending on the actual object.
+> ✅ Same method signature, different implementations.  
+> Happens **at runtime** through *dynamic method dispatch*.
+
+---
+
+# Rules — Method Overriding
+
+| Rule | Description |
+| ---- | ------------ |
+| Method name & parameters | Must be **identical** |
+| Return type | Must be same or covariant |
+| Access modifier | Can’t reduce visibility |
+| Static / final methods | ❌ cannot be overridden |
+| Occurs | **At runtime** |
+
+> Use `@Override` annotation to avoid mistakes.
 
 ---
 
 # How Polymorphism Works with Inheritance
 
-<div class="cols">
-<div>
 
-* Inheritance provides the **structure**
-  → subclasses inherit and **override** parent methods.
-* Polymorphism provides the **behavioral flexibility**
-  → method call resolved at **runtime** based on actual type.
+
+* Inheritance → **structure and reusability**
+* Polymorphism → **behavioral flexibility**
 
 ```java
 Animal a = new Dog();
-a.sound(); // Executes Dog’s version
+a.sound(); // Executes Dog’s method
 ```
 
-> Compiler looks at the reference type,
-> JVM calls the **actual object’s** method at runtime.
+> The reference type determines available members,  
+> but the **object type** determines which method runs.
 
-</div>
-<div>
-  <div class="imgbox">
 
-![width:800](assets/07/polymorphism-inheritance.png)
 
+---
+<div class="imgbox">
+  
+  ![width:850](assets/07/polymorphism-inheritance.png)
   </div>
-</div>
-</div>
-
 ---
 
-# Example — Dynamic Method Dispatch
+# Dynamic Method Dispatch (Runtime Binding)
 
 ```java
-class Animal {
-    void makeSound() { 
-      System.out.println("Animal sound"); 
-    }
-}
-
-class Dog extends Animal {
-    void makeSound() { 
-      System.out.println("Dog barks"); 
-    }
-}
-class Cat extends Animal {
-    void makeSound() { 
-      System.out.println("Cat meows"); 
-      }
-}
-```
----
-
-```java
+class Animal {              void makeSound() { System.out.println("Animal sound");} }
+class Dog extends Animal {  void makeSound() { System.out.println("Dog barks"); } }
+class Cat extends Animal {  void makeSound() { System.out.println("Cat meows"); } }
 
 public class Test {
     public static void main(String[] args) {
         Animal a = new Dog();
-        a.makeSound(); // "Dog barks"
+        a.makeSound();  // Dog barks
         a = new Cat();
-        a.makeSound(); // "Cat meows"
+        a.makeSound();  // Cat meows
     }
 }
 ```
 
-> This mechanism is called **Dynamic Method Dispatch**.
+> ✅ The method call is resolved at **runtime** — not compile time.  
+> This is **Dynamic Method Dispatch** in Java.
 
 ---
 
-# The `final` Keyword — Preventing Overrides
+# Visualizing Dynamic Binding
+
+<div class="imgbox">
+
+![width:750](assets/07/dynamic-binding-diagram.png)
+</div>
+
+> 🔹 Compiler binds by **reference type**  
+> 🔹 JVM executes by **object type**
+
+---
+
+# The `final` Keyword — Restrictions
 
 <div class="cols">
 <div>
 
-* `final` is used to **restrict inheritance or modification**.
-* Can be applied to:
+* **final variable** → cannot change value
+* **final method** → cannot be overridden
+* **final class** → cannot be subclassed
 
-    * **Variables:** cannot be reassigned
-    * **Methods:** cannot be overridden
-    * **Classes:** cannot be subclassed
+Used for **security, performance**, and **immutability**.
 
 </div>
 <div>
   <div class="imgbox">
 
-![width:850](assets/07/final-keyword.png)
-
+  ![width:900](assets/07/final-keyword.png)
   </div>
 </div>
 </div>
 
 ---
 
+# Examples — `final` Usage
+
 ```java
-final class Animal { } // No subclass allowed
-```
-```java
+final class Animal {}  // ❌ cannot have subclass
 class Dog {
-    final void bark() {System.out.println("Bark!");}
+    final void bark() {
+        System.out.println("Woof!");
+    }
 }
 ```
-
-> Marking methods as `final` can improve security and performance.
-
-
----
-
-# Example — Final Variable
 
 ```java
 class Zoo {
     final String name = "Sharif Zoo";
-
     void display() {
-        // name = "Tehran Zoo"; // ❌ Error: cannot assign a value to final variable
+        // name = "Tehran Zoo"; // ❌ not allowed
         System.out.println(name);
     }
 }
 ```
 
-> `final` variables act like **constants** in Java.
+> `final` = permanent → protects design integrity.
+
+---
+
+# Overloading vs Overriding — Summary
+
+| Feature | Overloading | Overriding |
+|----------|-------------|------------|
+| Binding time | Compile-time | Runtime |
+| Method name | Same | Same |
+| Parameters | Different | Same |
+| Return type | Can differ | Must be same / covariant |
+| Access level | Can change | Cannot be reduced |
+| Inheritance required | ❌ No | ✅ Yes |
+| Example use | Multiple input types | Customized behavior |
+
+---
+
+# Real-world Example
+
+```java
+class Payment {
+    void pay() { System.out.println("Generic payment"); }
+}
+class CreditCard extends Payment {
+    @Override
+    void pay() { System.out.println("Paying via Credit Card"); }
+}
+class PayPal extends Payment {
+    @Override
+    void pay() { System.out.println("Paying via PayPal"); }
+}
+public class Checkout {
+    public static void main(String[] args) {
+        Payment p = new CreditCard();
+        p.pay();
+        p = new PayPal();
+        p.pay();
+    }
+}
+```
+
+> Same method → multiple implementations.  
+> Common pattern in frameworks (e.g. Spring, Android).
 
 ---
 
 # Summary
 
-| Concept             | Description                                 |
+| Concept             | Description |
 | ------------------- | ------------------------------------------- |
-| **Polymorphism**    | Many forms; same method, different behavior |
-| **Inheritance**     | Enables reuse and specialization            |
-| **Dynamic Binding** | Method resolved at runtime                  |
-| **final method**    | Prevents overriding                         |
-| **final class**     | Prevents inheritance                        |
-| **final variable**  | Makes the value constant                    |
+| **Overloading**     | Compile-time polymorphism |
+| **Overriding**      | Runtime polymorphism |
+| **Dynamic Binding** | Actual object determines execution |
+| **final**           | Restricts inheritance / modification |
+| **Inheritance**     | Enables structure for polymorphism |
 
-> Polymorphism + Inheritance → Core of Java’s flexibility and design extensibility.
+
+> 💡 Polymorphism + Inheritance = Core of OOP flexibility.
 
 ---
 
 <!-- _class: lead -->
-
-# Thank You
+# Thank You!
 
 <div class="cols">
-<div> 
-<p class="pill">Polymorphism in Java</p>
-</div>
 <div>
-  <div class="imgbox">
+<p class="pill">Polymorphism in Java — Extended</p>
+</div>
+<div class="imgbox">
 
-![width:800](assets/07/polymorphism-thanks.png)
-
-  </div>
+![width:850](assets/07/polymorphism-thanks.png)
 </div>
 </div>
 
