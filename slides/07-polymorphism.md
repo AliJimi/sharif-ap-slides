@@ -110,20 +110,22 @@ p.print("Sharif");
 p.print(3.14, 2);
 ```
 
-> ✅ Same method name, different **parameter list**.  
-> ❌ Return type alone cannot differentiate methods.
+>  Same method name, different **parameter list**.  
+>  Return type alone cannot differentiate methods.
 
 ---
 
 # Notes — Overloading Rules
+| Rule                  | Description                                   |
+| --------------------- | --------------------------------------------- |
+| **Name & Parameters** | Must be identical to parent’s method          |
+| **Return Type**       | Same or covariant (subtype allowed)           |
+| **Access Modifier**   | Can be wider, not more restrictive            |
+| **Exceptions**        | Only same or subclass checked exceptions      |
+| **Occurs**            | Happens at **runtime** (runtime polymorphism) |
+| **@Override**         | Optional but strongly recommended             |
 
-| Rule | Description |
-| ---- | ------------ |
-| Parameter count | Must differ |
-| Parameter type | Can differ |
-| Return type | Ignored by compiler |
-| Access modifier | Can change |
-| Occurs | **At compile time** |
+
 
 > The compiler picks the best match for the arguments.
 
@@ -155,20 +157,21 @@ a1.sound(); // Woof
 a2.sound(); // Meow
 ```
 
-> ✅ Same method signature, different implementations.  
+>  Same method signature, different implementations.  
 > Happens **at runtime** through *dynamic method dispatch*.
 
 ---
 
 # Rules — Method Overriding
 
-| Rule | Description |
-| ---- | ------------ |
-| Method name & parameters | Must be **identical** |
-| Return type | Must be same or covariant |
-| Access modifier | Can’t reduce visibility |
-| Static / final methods | ❌ cannot be overridden |
-| Occurs | **At runtime** |
+| Rule                  | Description                                   |
+| --------------------- | --------------------------------------------- |
+| **Name & parameters** | Must match exactly with parent method         |
+| **Return type**       | Same or subtype (covariant)                   |
+| **Access modifier**   | Can’t be more restrictive than parent         |
+| **Static / final**    | These methods can’t be overridden             |
+| **Occurs**            | Happens at **runtime** (runtime polymorphism) |
+
 
 > Use `@Override` annotation to avoid mistakes.
 
@@ -215,7 +218,7 @@ public class Test {
 }
 ```
 
-> ✅ The method call is resolved at **runtime** — not compile time.  
+> The method call is resolved at **runtime** — not compile time.  
 > This is **Dynamic Method Dispatch** in Java.
 
 ---
@@ -257,7 +260,7 @@ Used for **security, performance**, and **immutability**.
 # Examples — `final` Usage
 
 ```java
-final class Animal {}  // ❌ cannot have subclass
+final class Animal {}  // cannot have subclass
 class Dog {
     final void bark() {
         System.out.println("Woof!");
@@ -269,7 +272,7 @@ class Dog {
 class Zoo {
     final String name = "Sharif Zoo";
     void display() {
-        // name = "Tehran Zoo"; // ❌ not allowed
+        // name = "Tehran Zoo"; // not allowed
         System.out.println(name);
     }
 }
@@ -281,15 +284,15 @@ class Zoo {
 
 # Overloading vs Overriding — Summary
 
-| Feature | Overloading | Overriding |
-|----------|-------------|------------|
-| Binding time | Compile-time | Runtime |
-| Method name | Same | Same |
-| Parameters | Different | Same |
-| Return type | Can differ | Must be same / covariant |
-| Access level | Can change | Cannot be reduced |
-| Inheritance required | ❌ No | ✅ Yes |
-| Example use | Multiple input types | Customized behavior |
+| Feature                  | **Overloading**               | **Overriding**            |
+| ------------------------ | ----------------------------- | ------------------------- |
+| **Binding time**         | Compile-time                  | Runtime                   |
+| **Method name**          | Same                          | Same                      |
+| **Parameters**           | Must differ                   | Must match exactly        |
+| **Return type**          | Can differ                    | Must be same or covariant |
+| **Access level**         | Can change freely             | Can’t reduce visibility   |
+| **Inheritance required** | No                          | Yes                     |
+| **Purpose**              | Same action, different inputs | Change inherited behavior |
 
 ---
 
@@ -324,16 +327,16 @@ public class Checkout {
 
 # Summary
 
-| Concept             | Description |
-| ------------------- | ------------------------------------------- |
-| **Overloading**     | Compile-time polymorphism |
-| **Overriding**      | Runtime polymorphism |
-| **Dynamic Binding** | Actual object determines execution |
-| **final**           | Restricts inheritance / modification |
-| **Inheritance**     | Enables structure for polymorphism |
+| Concept             | Description                                                        |
+| ------------------- | ------------------------------------------------------------------ |
+| **Overloading**     | Compile-time polymorphism — same method name, different parameters |
+| **Overriding**      | Runtime polymorphism — child redefines parent method               |
+| **Dynamic Binding** | Actual object type decides which method runs at runtime            |
+| **final**           | Prevents overriding or inheritance of classes/methods              |
+| **Inheritance**     | Foundation for code reuse and polymorphism                         |
 
 
-> 💡 Polymorphism + Inheritance = Core of OOP flexibility.
+> Polymorphism + Inheritance = Core of OOP flexibility.
 
 ---
 
