@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:25](assets/sharif-logo-blue.png) **Advanced Programming (AP) — From Software Engineering to OOP in Java**"
+header: "![height:25](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png) **Advanced Programming (AP) — From Software Engineering to OOP in Java**"
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -19,7 +19,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](assets/sharif-logo-blue.png)
+![bg right:30% 90%](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png)
 
 # Advanced Programming
 

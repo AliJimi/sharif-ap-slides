@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:24](../assets/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
+header: "![height:24](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png) **Sharif University Workshop Series — Linux Fundamentals**"
 footer: "**Sharif University of Technology** • Fall 2025 • Instructor: Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -17,7 +17,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../assets/sharif-logo-blue.png)
+![bg right:30% 90%](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png)
 # Advanced Programming
 ## WorkShop: Linux Fundamentals
 

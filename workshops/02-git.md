@@ -4,7 +4,7 @@ theme: default
 paginate: true
 backgroundColor: #ffffff
 color: #000000
-header: "![height:24](/assets/sharif-logo-blue.png) **Sharif University Workshop Series — Git Fundamentals**"
+header: "![height:24](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png) **Sharif University Workshop Series — Git Fundamentals**"
 footer: "**Sharif University of Technology** • Fall 2025 • Mr. Ali Najimi • Hossein Masihi"
 style: |
   :root { --brand: #1966ab; --text: #000000; }
@@ -17,7 +17,7 @@ style: |
 ---
 
 <!-- _class: lead -->
-![bg right:30% 90%](../slides/assets/sharif-logo-blue.png)
+![bg right:30% 90%](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png)
 # Advanced Programming
 ## WorkShop: Git Fundamentals
 
@@ -55,7 +55,7 @@ style: |
 
 ```bash
 sudo apt install git                              # Install Git on Debian/Ubuntu
-git config --global user.name "Hossein Masihi"    # Set your global username
+git config --global user.name "Hossein Bean"      # Set your global username
 git config --global user.email "hossein@sharif.ir" # Set your global email
 
 git config --global init.defaultBranch main       # Set default branch name to main
