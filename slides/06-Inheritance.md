@@ -23,7 +23,7 @@ style: |
 <!-- _class: lead -->
 ![bg right:30% 90%](https://cdn.shraif.ir/cdn/main/ap/sharif-logo-blue.png)
 # Advanced Programming
-## Extended: Inheritance & Polymorphism
+## Inheritance & Polymorphism
 
 **Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
