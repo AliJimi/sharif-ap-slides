@@ -26,7 +26,9 @@ style: |
 
 **Instructor:** Ali Najimi  
 **Author:** Hossein Masihi  
-Sharif University of Technology — Fall 2025
+**Department of Computer Engineering**  
+**Sharif University of Technology**  
+**Fall 2025**
 
 ---
 
@@ -137,13 +139,6 @@ try {
 * Caused by incorrect logic in code
 * No forced handling
 * Should be solved by fixing logic
-
----
-
-<div class="imgbox">
-
-![width:950](assets/12/unchecked-exception-diagram.png)
-</div>
 
 ---
 

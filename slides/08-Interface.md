@@ -38,7 +38,7 @@ style: |
 ## Interfaces in Java — Extended Edition
 
 **Instructor:** Ali Najimi  
-**Author:** Hossein Masihi  
+**Author:** Hossein Masihi
 **Department of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
