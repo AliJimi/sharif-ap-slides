@@ -13,23 +13,10 @@ style: |
     color: var(--text);
     font-size: 28px;
     font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
-    animation: fadeIn 0.9s ease-in;
   }
-  h1, h2, h3 {
-    color: var(--brand);
-    font-family: 'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
-    animation: slideUp 0.8s ease-out;
-  }
-  ul, p, pre, table { animation: fadeIn 1s ease-in; }
-  code { font-size: 90%; }
-  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
-  .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
-  .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
-  .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
-  @keyframes slideUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-  @keyframes zoomIn { from { opacity: 0; transform: scale(0.9);} to { opacity: 1; transform: scale(1);} }
-  section.lead header, section.lead footer { display: none !important; }
+  h1, h2, h3 { color: var(--brand); }
+  .cols { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 24px; }
+  .imgbox { border: 1px solid #ddd; border-radius: 10px; padding: 8px; text-align:center; }
 ---
 
 <!-- _class: lead -->
@@ -49,9 +36,10 @@ Sharif University of Technology — Fall 2025
 2. Exception Handling in Java  
 3. `try` / `catch` / `finally`  
 4. Checked vs Unchecked Exceptions  
-5. Runtime Exceptions  
-6. Pros & Cons of Exception Systems  
-7. Summary
+5. Real-World Usage Examples  
+6. Visual Comparison Diagrams  
+7. Developer Humor (Break Slides)  
+8. Summary
 
 ---
 
@@ -66,31 +54,29 @@ int divide(int a, int b) {
 
 Problems:
 
-* Error signals depend on **magic values**
-* Hard to differentiate **valid output** from **error**
-* No stack trace → debugging is difficult
+* Magic error values (`-1`, `null`, etc.)
+* Hard to detect real failure vs result
+* No call stack → debugging is painful
 
-> Traditional error codes are weak and unreliable.
+> Traditional error codes are weak and ambiguous.
 
 ---
 
-# Exception Management in Java
-
-Java introduced a **structured** error-handling system:
+# Exception Handling in Java
 
 ```java
 try {
     // code that may fail
 } catch (Exception e) {
-    // handle the failure
+    // recovery / fallback
 }
 ```
 
 Benefits:
 
-* Clear separation of **normal flow** vs **error flow**
-* Preserves stack trace → easier debugging
-* Promotes predictable failure behavior
+* Clear failure path
+* Stack trace preserved
+* Encourages predictable failure patterns
 
 ---
 
@@ -106,87 +92,172 @@ try {
 }
 ```
 
-* `try` → code that may throw exception
-* `catch` → handles specific failures
-* `finally` → **always executes**, even if exception occurs
-
-> Use `finally` for releasing resources (streams, DB connections, sockets).
+* `finally` always executes (except `System.exit()` / JVM crash).
+* Use for **cleanup**: closing files, sockets, DB connections.
 
 ---
 
 # Checked vs Unchecked Exceptions
 
-| Type          | Extends            | Must be handled?              | Examples                                   |
-| ------------- | ------------------ | ----------------------------- | ------------------------------------------ |
-| **Checked**   | `Exception`        | Yes (`try/catch` or `throws`) | `IOException`, `SQLException`              |
-| **Unchecked** | `RuntimeException` | Optional                      | `NullPointerException`, `IndexOutOfBounds` |
+| Type          | Inherits From      | Must Handle? | Root Cause        | Examples                                      |
+| ------------- | ------------------ | ------------ | ----------------- | --------------------------------------------- |
+| **Checked**   | `Exception`        | **Yes**      | External failures | `IOException`, `SQLException`                 |
+| **Unchecked** | `RuntimeException` | No           | Logic bugs        | `NullPointerException`, `ArithmeticException` |
 
-> Checked exceptions enforce **compile-time safety**.
+> Checked = environment uncertainty
+> Unchecked = programming mistake
 
 ---
 
-# Runtime Exceptions (Unchecked)
+# Visual Comparison — Checked
+
+<div class="cols">
+<div>
+
+**Checked Exceptions**
+
+* Caused by environment (I/O, network)
+* Developer must acknowledge the risk
+* Encourages recovery strategy
+
+</div>
+<div class="imgbox">
+
+![Checked Exception Diagram](assets/12/checked-exception-diagram.png)
+</div>
+</div>
+
+---
+
+# Visual Comparison — Unchecked
+
+
+**Unchecked Exceptions**
+
+* Caused by incorrect logic in code
+* No forced handling
+* Should be solved by fixing logic
+
+---
+
+<div class="imgbox">
+
+![width:950](assets/12/unchecked-exception-diagram.png)
+</div>
+
+---
+
+# Developer Humor Break
+<div class="cols">
+<div>
+
+> “It works on my machine.”
+
+```
+Translation:
+I have absolutely no idea why it doesn't work anywhere else.
+```
+</div>
+
+<div>
+
+<div class="imgbox">
+
+![width:300](assets/12/debugging-meme.png)
+
+</div>
+</div>
+
+---
+
+# Real-World Example — Checked
 
 ```java
-int[] arr = new int[3];
-arr[5] = 10; // throws ArrayIndexOutOfBoundsException
+void loadConfig() throws IOException {
+    FileReader reader = new FileReader("config.json");
+    // process...
+}
 ```
 
-Common Runtime Exceptions:
+* The file may not exist
+* Storage may be corrupted
+* Permissions may differ
 
-* `NullPointerException`
-* `IllegalArgumentException`
-* `ArithmeticException`
-
-Characteristics:
-
-* Usually caused by **programming mistakes**
-* Should be prevented, not caught silently
-
-> Runtime Exceptions = *Fix the code, not the input.*
+![File IO](assets/12/file-io.png)
 
 ---
 
-# Throwing Custom Exceptions
+# Real-World Example — Unchecked
 
 ```java
-class InvalidAgeException extends Exception {
-    InvalidAgeException(String msg) { super(msg); }
-}
-
-void register(int age) throws InvalidAgeException {
-    if (age < 18) throw new InvalidAgeException("Must be 18+");
+void greet(User user) {
+    System.out.println(user.name); // may throw NullPointerException
 }
 ```
 
-> Custom exceptions improve clarity and domain expression.
+Correct approach:
+
+```java
+void greet(User user) {
+    if (user == null) throw new IllegalArgumentException("User cannot be null");
+    System.out.println(user.name);
+}
+```
+
+![NullPointer Meme](assets/12/null-pointer.png)
 
 ---
 
-# Pros & Cons of Exception System
+# Developer Humor Break #2
 
-| Pros                      | Cons                                               |
-| ------------------------- | -------------------------------------------------- |
-| Clear error propagation   | Misuse can lead to messy flow                      |
-| Stack trace debugging     | Too many exception types confuse design            |
-| Encourages robust design  | Overuse of checked exceptions can harm readability |
-| Enables graceful recovery | Requires discipline and testing                    |
+Developer:
 
-> Exceptions must be used **intentionally**, not reactively.
+```
+No need for error handling, my code cannot fail.
+```
+
+Production:
+
+```
+Exception: Are you sure about that?
+```
+
+![Production Fire](assets/12/production-fire-meme.png)
+
+---
+
+# Big Picture Flow Diagram
+
+```
+      Outside World (Unpredictable)
+                  ↓
+      +----------------------+
+      |  CHECKED EXCEPTION   |
+      +----------------------+
+        Must handle or declare
+```
+
+```
+      Developer Logic (Bug)
+                  ↓
+      +----------------------+
+      | UNCHECKED EXCEPTION  |
+      +----------------------+
+        Fix the code logic
+```
 
 ---
 
 # Summary
 
-| Concept            | Key Idea                            |
-| ------------------ | ----------------------------------- |
-| Old Error Handling | Weak, ambiguous, no trace           |
-| Java Exceptions    | Structured failure handling         |
-| `finally`          | Cleanup logic always executed       |
-| Runtime Exceptions | Indicate programming mistakes       |
-| Best Practice      | Fail clearly, recover intentionally |
+| Concept              | Key Idea                        |
+| -------------------- | ------------------------------- |
+| Checked Exceptions   | Handle real-world uncertainty   |
+| Unchecked Exceptions | Fix broken program logic        |
+| `finally`            | Always used for cleanup         |
+| Good Practice        | Fail clearly, fail meaningfully |
 
-> Clean error handling is a core part of professional-grade software.
+> Robust software is not only coded — it is **defensively designed**.
 
 ---
 
@@ -194,14 +265,4 @@ void register(int age) throws InvalidAgeException {
 
 # Thank You!
 
-<div class="cols">
-<div>
-<p class="pill">Error Handling & Exception Management</p>
-</div>
-<div class="imgbox">
-![width:850](assets/12/exception-thanks.png)
-</div>
-</div>
-
 **Sharif University of Technology — Advanced Programming — Fall 2025**
-
