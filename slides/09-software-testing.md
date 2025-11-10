@@ -132,7 +132,6 @@ class CalculatorTest {
 ```java
 class BankAccount {
     private double balance = 0;
-
     public void withdraw(double amount) {
         if (amount > balance)
             throw new IllegalArgumentException("Insufficient funds");
@@ -140,8 +139,9 @@ class BankAccount {
     }
 }
 ```
+---
 
-Testing the thrown exception:
+## Testing the thrown exception:
 
 ```java
 @Test
@@ -152,6 +152,88 @@ void testWithdrawException() {
 ```
 
 > Exception testing ensures **safe failure behavior**.
+---
+
+# Mocking — What and Why?
+
+**Mocking** is the practice of replacing real dependencies with **fake (mock) objects** during testing.
+
+We use mocks when the class under test depends on something external, such as:
+
+* Database
+* File System
+* Network service
+* External API
+
+Mocks allow us to test **logic in isolation** — without relying on the real world.
+
+> When your tests depend on the outside world, they become slow, flaky, and unreliable.
+
+---
+
+# Benefits of Mocking
+
+| Without Mocking | With Mocking |
+|-----------------|-------------|
+| Tests are slow | Tests are fast |
+| Results vary due to environment | Results are consistent |
+| Requires real external setup | No external setup needed |
+| Failures are hard to debug | Failures are predictable and isolated |
+
+> Mocking helps ensure your tests are **stable, deterministic, and fast**.
+
+---
+
+# Example Using Mockito
+
+```java
+import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+class NotificationServiceTest {
+
+    @Test
+    void testSendMessage() {
+        MessageGateway gateway = mock(MessageGateway.class);
+        NotificationService service = new NotificationService(gateway);
+
+        service.send("Hi");
+        verify(gateway).deliver("Hi");
+    }
+}
+````
+
+* `mock()` creates a fake dependency
+* `verify()` checks that a method was called
+
+---
+
+# Concept Diagram
+
+```
+ Real Email Service  ❌ (slow, network required)
+           ↓
+   Mock Email Service  ✅ (fast, controlled behavior)
+```
+
+> We are testing **NotificationService**, not the actual email delivery process.
+
+---
+
+# Developer Humor (Because Testing Needs It)
+
+* “My code works.”
+  “Did you test it?”
+  “Well… it *worked on my machine*.”
+
+* Writing tests without mocking:
+  “Why is the test connecting to the production database?”
+
+* QA: “I don't trust your code.”
+  Developer: “Fair. I don't trust it either.”
+
+* The biggest lie in software development:
+  “We will write the tests later.”
+
 
 ---
 
@@ -172,14 +254,13 @@ We **replace real dependencies** with **mocks**.
 @Mock EmailService email;
 @InjectMocks UserManager manager;
 ```
+---
 
 > Mocking isolates **logic** from external systems → reliable tests.
 
----
-
 <div class="imgbox">
 
-![width:750](assets/09/mocking-diagram.png)
+![width:500](assets/09/mocking-diagram.png)
 
 </div>
 
@@ -205,15 +286,13 @@ We **replace real dependencies** with **mocks**.
 
 # Thank You!
 
-<div class="cols">
 <div>
 <p class="pill">Software Testing — Core Foundations</p>
 </div>
 <div class="imgbox">
 
-![width:850](assets/09/testing-thanks.png)
+![width:450](assets/09/testing-thanks.png)
 
-</div>
 </div>
 
 **Sharif University of Technology — Advanced Programming — Fall 2025**
