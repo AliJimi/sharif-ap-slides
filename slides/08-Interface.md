@@ -53,8 +53,7 @@ style: |
 4. Default and Static Methods  
 5. Interface vs Abstract Class  
 6. Multiple Interface Implementation  
-7. Real-World Example  
-8. Summary and Key Takeaways
+7. Summary and Key Takeaways
 
 ---
 
@@ -172,29 +171,6 @@ class Duck implements Flyable, Swimmable {
 ```
 
 > Enables **multi-capability classes**
-
----
-
-# Real-World Example — Payment
-
-```java
-interface PaymentMethod {
-    void pay(double amount);
-}
-class CreditCard implements PaymentMethod {
-    public void pay(double amount) { System.out.println("Paid via Credit Card"); }
-}
-class PayPal implements PaymentMethod {
-    public void pay(double amount) { System.out.println("Paid via PayPal"); }
-}
-class Checkout {
-    static void process(PaymentMethod method) {
-        method.pay(200);
-    }
-}
-```
-
-> System depends on interface → implementations are interchangeable
 
 ---
 

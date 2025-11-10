@@ -116,14 +116,14 @@ p.print(3.14, 2);
 ---
 
 # Notes — Overloading Rules
-| Rule                  | Description                                   |
-| --------------------- | --------------------------------------------- |
-| **Name & Parameters** | Must be identical to parent’s method          |
-| **Return Type**       | Same or covariant (subtype allowed)           |
-| **Access Modifier**   | Can be wider, not more restrictive            |
-| **Exceptions**        | Only same or subclass checked exceptions      |
-| **Occurs**            | Happens at **runtime** (runtime polymorphism) |
-| **@Override**         | Optional but strongly recommended             |
+| Rule                  | Description                                        |
+|-----------------------|----------------------------------------------------|
+| **Name & Parameters** | Must be identical to parent’s method               |
+| **Return Type**       | Same or covariant (subtype allowed)                |
+| **Access Modifier**   | Can be wider, not more restrictive                 |
+| **Exceptions**        | Only same or subclass checked exceptions           |
+| **Occurs**            | Happens at **compile** (compile-time polymorphism) |
+| **@Overload**         | Optional but strongly recommended                  |
 
 
 
