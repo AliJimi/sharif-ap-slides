@@ -172,6 +172,9 @@ I have absolutely no idea why it doesn't work anywhere else.
 
 # Real-World Example — Checked
 
+<div class="cols">
+<div>
+
 ```java
 void loadConfig() throws IOException {
     FileReader reader = new FileReader("config.json");
@@ -179,11 +182,21 @@ void loadConfig() throws IOException {
 }
 ```
 
+
 * The file may not exist
 * Storage may be corrupted
 * Permissions may differ
 
+</div>
+<div>
+
+<div class="imgbox">
+
+
 ![File IO](assets/12/file-io.png)
+
+</div>
+</div>
 
 ---
 
@@ -204,7 +217,6 @@ void greet(User user) {
 }
 ```
 
-![NullPointer Meme](assets/12/null-pointer.png)
 
 ---
 
@@ -222,7 +234,6 @@ Production:
 Exception: Are you sure about that?
 ```
 
-![Production Fire](assets/12/production-fire-meme.png)
 
 ---
 
