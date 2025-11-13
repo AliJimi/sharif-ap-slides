@@ -70,7 +70,9 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
+
   ![width:850](assets/10/design-patterns-concept.png)
+
   </div>
 </div>
 </div>
@@ -137,11 +139,7 @@ Example — Adapter:
 
 ```java
 interface USBC { void connect(); }
-
-class HDMI {
-    void plugHDMI() { System.out.println("HDMI connected"); }
-}
-
+class HDMI {   void plugHDMI() { System.out.println("HDMI connected"); }  }
 class HDMItoUSBAdapter implements USBC {
     private HDMI hdmi = new HDMI();
     public void connect() { hdmi.plugHDMI(); }
@@ -162,11 +160,7 @@ Example — Strategy:
 
 ```java
 interface SortStrategy { void sort(int[] data); }
-
-class QuickSort implements SortStrategy {
-    public void sort(int[] data) { /* ... */ }
-}
-
+class QuickSort implements SortStrategy {   public void sort(int[] data) { /* ... */ }  }
 class SortContext {
     private SortStrategy strategy;
     SortContext(SortStrategy strategy) { this.strategy = strategy; }
@@ -206,12 +200,13 @@ class SortContext {
 
 # Thank You!
 
-<div class="cols">
+<div class="">
 <div>
 <p class="pill">Design Patterns — Core Understanding</p>
 </div>
 <div class="imgbox">
-![width:850](assets/10/design-patterns-thanks.png)
+
+![width:750](assets/10/design-patterns-thanks.png)
 </div>
 </div>
 
