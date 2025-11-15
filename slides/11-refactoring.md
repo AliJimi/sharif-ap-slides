@@ -52,6 +52,14 @@ Sharif University of Technology — Fall 2025
 5. Example  
 6. Summary
 
+
+---
+
+  <div class="imgbox">
+
+  ![width:950](assets/11/refactoring-concept.png)
+  </div>
+
 ---
 
 # Refactoring — Concept
@@ -72,7 +80,8 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
-  ![width:850](assets/11/refactoring-concept.png)
+
+  ![width:850](assets/11/refactor.png)
   </div>
 </div>
 </div>
@@ -80,6 +89,9 @@ Sharif University of Technology — Fall 2025
 ---
 
 # Clean Code Principles
+
+<div class="cols">
+<div>
 
 | Principle | Meaning |
 |---------|---------|
@@ -91,6 +103,14 @@ Sharif University of Technology — Fall 2025
 
 > Code is read **more often** than it is written.
 
+</div>
+<div>
+  <div class="imgbox">
+
+  ![width:850](assets/11/big-refactoring-meme.png)
+  </div>
+</div>
+</div>
 ---
 
 # Bad Code — Code Smells
@@ -124,6 +144,13 @@ Problems:
 
 ---
 
+
+  <div class="imgbox">
+
+  ![width:950](assets/11/refactoring_time.png)
+  </div>
+
+---
 # After Refactoring
 
 ```java
@@ -185,11 +212,16 @@ double taxAmount(double price, double tax) {
 
 <div class="cols">
 <div>
+
+
 <p class="pill">Refactoring — Clean Code for the Future</p>
 </div>
 <div class="imgbox">
-![width:850](assets/11/refactoring-thanks.png)
+
+![width:850](assets/11/no_more_refactor.png)
 </div>
 </div>
 
 **Sharif University of Technology — Advanced Programming — Fall 2025**
+
+
