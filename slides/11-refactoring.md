@@ -38,8 +38,10 @@ style: |
 ## Refactoring — Improving Code Quality
 
 **Instructor:** Ali Najimi  
-**Author:** Hossein Masihi  
-Sharif University of Technology — Fall 2025
+**Author:** Hossein Masihi
+**Department of Computer Engineering**  
+**Sharif University of Technology**  
+**Fall 2025**
 
 ---
 
