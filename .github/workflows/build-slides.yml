@@ -1,0 +1,50 @@
+name: Build Slides
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: |
+          npm install -g @marp-team/marp-cli
+
+      - name: Prepare output directory
+        run: mkdir -p build/pdf build/pptx build/html
+
+      - name: Convert all Markdown slides
+        run: |
+          for file in slides/assets/*.md; do
+            filename=$(basename "$file" .md)
+
+            # PDF
+            marp "$file" --pdf --allow-local-files -o build/pdf/"$filename".pdf
+
+            # PPTX
+            marp "$file" --pptx --allow-local-files -o build/pptx/"$filename".pptx
+
+            # HTML
+            marp "$file" --html --allow-local-files -o build/html/"$filename".html
+          done
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides-build
+          path: build/
+          retention-days: 7
