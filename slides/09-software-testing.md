@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: default
 paginate: true
 backgroundColor: #ffffff
@@ -38,7 +38,7 @@ style: |
 ## Software Testing — Foundations, Tools, Practices
 
 **Instructor:** Ali Najimi  
-**Author:** Hossein Masihi  
+**Author:** Hossein Masihi
 **Department of Computer Engineering**  
 **Sharif University of Technology**  
 **Fall 2025**
