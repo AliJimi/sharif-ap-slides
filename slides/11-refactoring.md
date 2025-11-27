@@ -99,7 +99,7 @@ style: |
 |---------|---------|
 | Readability | Code should be easy to understand |
 | Single Responsibility | Each unit has one purpose |
-| Small Functions | Functions should do *one thing* |
+| Small Methods | Methods should do *one thing* |
 | Naming Matters | Clear, intention-revealing names |
 | No Duplication | Reuse logic instead of copy-paste |
 
@@ -119,7 +119,7 @@ style: |
 
 | Smell | Description |
 |------|-------------|
-| Long Method | Too much logic in one function |
+| Long Method | Too much logic in one method |
 | Large Class | Too many responsibilities |
 | Magic Numbers | Unclear hardcoded values |
 | Duplicated Code | Same logic in multiple places |
