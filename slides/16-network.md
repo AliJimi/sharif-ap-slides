@@ -71,6 +71,7 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
+
   ![width:850](assets/16/network-concept.png)
   </div>
 </div>
@@ -92,6 +93,13 @@ Sharif University of Technology — Fall 2025
 
 ---
 
+  <div class="imgbox">
+  
+  ![width:850](assets/16/TCP-i-UDP.jpeg)
+  </div>
+
+---
+
 # What is a Socket?
 
 * A **socket** is an endpoint for communication.
@@ -107,11 +115,18 @@ Client <----> Network <----> Server
 > Sockets enable bidirectional communication.
 
 ---
+  <div class="imgbox">
+  
+  ![width:850](assets/16/Socket.png)
+  </div>
+
+---
 
 # Client-Server Model
 
 <div class="imgbox">
-![width:900](assets/16/client-server.png)
+
+![width:500](assets/16/client-server.png)
 </div>
 
 * Server waits for requests  
@@ -192,6 +207,7 @@ public class Client {
 <p class="pill">Networking & Sockets — Practical Foundations</p>
 </div>
 <div class="imgbox">
+
 ![width:850](assets/16/network-thanks.png)
 </div>
 </div>
