@@ -22,7 +22,7 @@ style: |
   }
   ul, p, pre, table { animation: fadeIn 1s ease-in; }
   code { font-size: 90%; }
-  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
+  .cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
   .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
   .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
   .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
@@ -70,10 +70,18 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
-  ![width:850](assets/15/stream-concept.png)
+
+  ![](assets/15/io-outs.gif)
   </div>
 </div>
 </div>
+
+---
+
+  <div class="imgbox">
+
+  ![](assets/15/file_streams.png)
+  </div>
 
 ---
 
@@ -134,6 +142,14 @@ try (FileInputStream in = new FileInputStream("image.png");
 ```
 
 > Used for images, audio, compiled files, etc.
+
+
+---
+
+  <div class="imgbox">
+
+  ![](assets/15/byte_streams.png)
+  </div>
 
 ---
 
@@ -197,6 +213,7 @@ in.close();
 <p class="pill">Java File & Stream — Practical I/O</p>
 </div>
 <div class="imgbox">
+
 ![width:850](assets/15/stream-thanks.png)
 </div>
 </div>
