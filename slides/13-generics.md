@@ -22,7 +22,7 @@ style: |
   }
   ul, p, pre, table { animation: fadeIn 1s ease-in; }
   code { font-size: 90%; }
-  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
+  .cols { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
   .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
   .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
   .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
@@ -68,6 +68,7 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
+
   ![width:850](assets/13/generics-concept.png)
   </div>
 </div>
@@ -205,6 +206,7 @@ Calculator<Double> c2 = new Calculator<>();
 <p class="pill">Generics in Java — Safe and Flexible Abstraction</p>
 </div>
 <div class="imgbox">
+
 ![width:850](assets/13/generics-thanks.png)
 </div>
 </div>

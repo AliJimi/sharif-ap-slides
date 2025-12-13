@@ -22,7 +22,7 @@ style: |
   }
   ul, p, pre, table { animation: fadeIn 1s ease-in; }
   code { font-size: 90%; }
-  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
+  .cols { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: start; }
   .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
   .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
   .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
@@ -72,6 +72,7 @@ Sharif University of Technology — Fall 2025
 </div>
 <div>
   <div class="imgbox">
+
   ![width:850](assets/14/containers-concept.png)
   </div>
 </div>
@@ -207,6 +208,7 @@ Map<String, Integer> map = new HashMap<>();
 <p class="pill">Java Data Structures — Core Containers</p>
 </div>
 <div class="imgbox">
+
 ![width:850](assets/14/containers-thanks.png)
 </div>
 </div>
