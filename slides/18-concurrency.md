@@ -42,6 +42,12 @@ Sharif University of Technology — Fall 2025
 
 ---
 
+<div class="imgbox">
+
+![width:850](assets/17/concurrency-thanks.png)
+</div>
+
+---
 # Concurrency — Concept
 
 * **Concurrency** allows multiple tasks to progress **overlapping in time**.
@@ -53,10 +59,8 @@ Sharif University of Technology — Fall 2025
 
 ```java
 class MyThread extends Thread {
-    public void run() {
-        System.out.println("Running in parallel!");
+    public void run() {System.out.println("Running in parallel!"); }
     }
-}
 ````
 
 > Concurrency ≠ Parallelism
@@ -76,6 +80,7 @@ class Worker extends Thread {
 }
 new Worker().start();
 ```
+---
 
 ### Implementing `Runnable`
 
@@ -102,7 +107,10 @@ new Thread(new Worker()).start();
 | Timed Waiting     | Waiting for a specified time   |
 | Terminated        | Execution finished             |
 
+---
+
 <div class="imgbox">
+<h1>Thread Lifecycle</h1>
 
 ![width:800](assets/17/thread-lifecycle.png)
 
@@ -163,6 +171,8 @@ balance = balance - amount;
 
 **If not synchronized → corrupted financial transactions.**
 
+---
+
 **Errors that occur here:**
 
 | Error           | Cause                                       |
@@ -184,11 +194,7 @@ class Account {
 
     void withdraw(int amount){
         lock.lock();
-        try {
-            balance -= amount;
-        } finally {
-            lock.unlock();
-        }
+        try { balance -= amount; } finally { lock.unlock(); }
     }
 }
 ```
@@ -235,7 +241,8 @@ Thread B waits for resource Y → held by Thread A
 <p class="pill">Concurrency — Safe Multithreading</p>
 </div>
 <div class="imgbox">
-![width:850](assets/17/concurrency-thanks.png)
+
+![width:850](assets/17/thanks.png)
 </div>
 </div>
 
