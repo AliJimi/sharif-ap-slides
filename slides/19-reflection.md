@@ -22,7 +22,7 @@ style: |
   }
   ul, p, pre, table { animation: fadeIn 1s ease-in; }
   code { font-size: 90%; }
-  .cols { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: start; }
+  .cols { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 24px; align-items: start; }
   .imgbox { border: 1px solid #eee; padding: 8px; border-radius: 10px; text-align:center; animation: zoomIn 1s ease-in; }
   .imgbox img { border-radius: 10px; border: 3px solid #1966ab; }
   .pill { display:inline-block; padding: 4px 10px; border:1px solid var(--brand); border-radius:999px; color: var(--brand); font-size:20px; }
@@ -62,6 +62,7 @@ Use cases:
 </div>
 <div>
   <div class="imgbox">
+
   ![width:800](assets/18/reflection-concept.png)
   </div>
 </div>
@@ -194,7 +195,8 @@ m.invoke(obj, "Ali");
 <p class="pill">Reflection & RTTI — Runtime Introspection</p>
 </div>
 <div class="imgbox">
-![width:850](assets/18/reflection-thanks.png)
+
+![width:800](assets/18/reflection-thanks.png)
 </div>
 </div>
 
