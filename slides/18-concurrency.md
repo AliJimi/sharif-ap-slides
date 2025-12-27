@@ -46,7 +46,7 @@ style: |
 
 <div class="imgbox">
 
-![width:850](assets/17/concurrency-thanks.png)
+![width:400](assets/17/concurrency-thanks.png)
 </div>
 
 ---
