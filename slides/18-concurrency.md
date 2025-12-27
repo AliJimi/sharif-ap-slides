@@ -36,9 +36,11 @@ style: |
 # Advanced Programming
 ## Concurrency — Multithreading in Java
 
-**Instructor:** Ali Najimi  
-**Author:** Hossein Masihi  
-Sharif University of Technology — Fall 2025
+**Instructor:** Ali Najimi
+**Author:** Hossein Masihi
+**Department of Computer Engineering**  
+**Sharif University of Technology**  
+**Fall 2025**
 
 ---
 
