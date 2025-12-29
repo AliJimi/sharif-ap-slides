@@ -47,10 +47,13 @@ class Outer {
     private int x = 10;
 
     class Inner {
-        void show() { System.out.println(x); }
+        void show() { 
+        System.out.println(x);
+        }
     }
 }
 ````
+---
 
 Usage:
 
@@ -121,6 +124,7 @@ Custom Annotation:
     int version();
 }
 ```
+---
 
 Usage:
 
